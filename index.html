@@ -19,18 +19,13 @@
 }
 body{font-family:var(--sans);background:var(--bg);color:var(--text);min-height:100vh}
 .shell{max-width:800px;margin:0 auto;padding:1.75rem 1.25rem 4rem}
-
-/* header */
 .top{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:1.25rem}
 .top h1{font-size:21px;font-weight:600;letter-spacing:-.02em}
 .top .ts{font-size:11px;color:var(--text3);font-family:var(--mono)}
-
-/* standings */
-.standings-wrap{background:var(--surface);border:1px solid var(--border);border-radius:11px;margin-bottom:1.25rem;overflow:hidden}
-.standings-hdr{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border-bottom:1px solid var(--border);cursor:pointer;user-select:none}
-.standings-title{font-size:13px;font-weight:600;letter-spacing:-.01em}
-.standings-toggle{font-size:11px;color:var(--text3);font-family:var(--mono)}
-.standings-body{padding:0}
+.sw{background:var(--surface);border:1px solid var(--border);border-radius:11px;margin-bottom:1.1rem;overflow:hidden}
+.sh{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border-bottom:1px solid var(--border);cursor:pointer;user-select:none}
+.sh-title{font-size:13px;font-weight:600}
+.sh-tog{font-size:11px;color:var(--text3);font-family:var(--mono)}
 .st{width:100%;border-collapse:collapse;font-size:12px}
 .st th{font-size:10px;font-family:var(--mono);font-weight:500;color:var(--text3);text-align:right;padding:6px 12px;border-bottom:1px solid var(--border);background:var(--surface2)}
 .st th:first-child{text-align:left}
@@ -38,34 +33,22 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);min-height:1
 .st td:first-child{text-align:left;font-weight:500}
 .st tr:last-child td{border-bottom:none}
 .st tr:hover td{background:var(--surface2)}
-.st .rank{font-family:var(--mono);font-size:10px;color:var(--text3);margin-right:6px}
-.st .rec{font-family:var(--mono);font-weight:600}
-.st .pct{font-family:var(--mono);font-size:11px}
-.st .rs-ra{font-family:var(--mono);font-size:11px;color:var(--text2)}
-.st .gb{font-family:var(--mono);font-size:11px;color:var(--text3)}
-
-/* controls */
+.rank{font-family:var(--mono);font-size:10px;color:var(--text3);margin-right:6px}
+.rec{font-family:var(--mono);font-weight:600}
+.pct-col{font-family:var(--mono);font-size:11px}
+.rs-ra{font-family:var(--mono);font-size:11px;color:var(--text2)}
+.gb-col{font-family:var(--mono);font-size:11px;color:var(--text3)}
 .controls{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:1rem}
-select,input[type=text]{font-family:var(--sans);font-size:13px;padding:6px 10px;border-radius:7px;border:1px solid var(--border2);background:var(--surface);color:var(--text)}
-.team-sel{appearance:none;background-image:url("data:image/svg+xml,%3Csvg width='10' height='6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%239b9a93' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 9px center;padding-right:26px;min-width:165px;cursor:pointer}
-.search{min-width:160px}
-
-/* stats row */
+select{font-family:var(--sans);font-size:13px;padding:6px 10px;border-radius:7px;border:1px solid var(--border2);background:var(--surface);color:var(--text);appearance:none;background-image:url("data:image/svg+xml,%3Csvg width='10' height='6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%239b9a93' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 9px center;padding-right:26px;min-width:165px;cursor:pointer}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:1rem}
 .stat{background:var(--surface);border:1px solid var(--border);border-radius:9px;padding:11px 13px}
 .stat-lbl{font-size:10px;color:var(--text3);font-family:var(--mono);margin-bottom:3px;text-transform:uppercase;letter-spacing:.04em}
 .stat-val{font-size:22px;font-weight:600;letter-spacing:-.02em}
-
-/* tabs */
 .tabs{display:flex;gap:5px;margin-bottom:.9rem;flex-wrap:wrap}
 .tab{font-family:var(--sans);font-size:12px;font-weight:500;padding:5px 13px;border-radius:20px;border:1px solid var(--border2);background:transparent;color:var(--text2);cursor:pointer;transition:all .12s}
 .tab:hover{border-color:var(--text3)}
 .tab.on{background:var(--text);color:var(--bg);border-color:var(--text)}
-
-/* date group */
 .dg{font-size:11px;font-weight:600;font-family:var(--mono);color:var(--text3);letter-spacing:.06em;text-transform:uppercase;padding:10px 2px 4px;margin-top:.25rem}
-
-/* game card */
 .card{background:var(--surface);border:1px solid var(--border);border-radius:11px;margin-bottom:7px;overflow:hidden;transition:border-color .12s}
 .card:hover{border-color:var(--border2)}
 .ch{display:flex;align-items:center;gap:9px;padding:12px 14px;cursor:pointer;user-select:none}
@@ -84,12 +67,8 @@ select,input[type=text]{font-family:var(--sans);font-size:13px;padding:6px 10px;
 .su{background:var(--blue-bg);color:var(--blue);border:1px solid var(--blue-b)}
 .cv{color:var(--text3);font-size:9px;transition:transform .18s;flex-shrink:0}
 .cv.open{transform:rotate(180deg)}
-
-/* card body */
 .cb{border-top:1px solid var(--border);padding:13px 14px}
 .sl{font-size:10px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--text3);margin-bottom:8px;font-family:var(--mono)}
-
-/* score */
 .sr{display:flex;align-items:center;gap:10px;margin-bottom:14px}
 .sc{display:flex;align-items:center;gap:7px;background:var(--surface2);border-radius:7px;padding:6px 11px}
 .scn{font-size:12px;color:var(--text2)}
@@ -97,8 +76,6 @@ select,input[type=text]{font-family:var(--sans);font-size:13px;padding:6px 10px;
 .sc.win .scv{color:var(--blue)}
 .sat{font-size:12px;color:var(--text3)}
 .ns{font-size:12px;color:var(--text3);font-style:italic;margin-bottom:14px}
-
-/* pitcher table — no innings col */
 .pt{width:100%;border-collapse:collapse;font-size:12px;margin-bottom:14px}
 .pt th{font-size:10px;font-family:var(--mono);font-weight:500;color:var(--text3);text-align:left;padding:3px 0 5px;border-bottom:1px solid var(--border)}
 .pt th:not(:first-child){text-align:right}
@@ -112,13 +89,9 @@ select,input[type=text]{font-family:var(--sans);font-size:13px;padding:6px 10px;
 .pb{display:inline-flex;align-items:center;gap:5px}
 .pbb{width:44px;height:4px;background:var(--border);border-radius:2px;overflow:hidden;flex-shrink:0}
 .pbf{height:100%;border-radius:2px}
-
-/* rest pill — green=available for next game, red=not available */
-.rest-pill{font-size:10px;font-weight:600;font-family:var(--mono);padding:3px 8px;border-radius:20px;white-space:nowrap}
-.rest-ok{background:var(--green-bg);color:var(--green);border:1px solid var(--green-b)}
-.rest-no{background:var(--red-bg);color:var(--red);border:1px solid var(--red-b)}
-
-/* affidavit */
+.rp{font-size:10px;font-weight:600;font-family:var(--mono);padding:3px 8px;border-radius:20px;white-space:nowrap}
+.rok{background:var(--green-bg);color:var(--green);border:1px solid var(--green-b)}
+.rno{background:var(--red-bg);color:var(--red);border:1px solid var(--red-b)}
 .ar{display:flex;gap:7px}
 .ab{flex:1;border-radius:7px;padding:8px 10px}
 .af2{background:var(--green-bg);border:1px solid var(--green-b)}
@@ -132,359 +105,221 @@ select,input[type=text]{font-family:var(--sans);font-size:13px;padding:6px 10px;
 </head>
 <body>
 <div class="shell">
-
 <div class="top">
   <h1>Mustang Game Tracker</h1>
   <span class="ts">2026 season · updated Apr 24</span>
 </div>
-
-<!-- Standings -->
-<div class="standings-wrap">
-  <div class="standings-hdr" onclick="toggleStandings()">
-    <span class="standings-title">Standings</span>
-    <span class="standings-toggle" id="stoggle">hide ▲</span>
+<div class="sw">
+  <div class="sh" onclick="toggleStandings()">
+    <span class="sh-title">Standings</span>
+    <span class="sh-tog" id="stog">hide ▲</span>
   </div>
-  <div class="standings-body" id="standingsBody">
-    <table class="st" id="standingsTable"></table>
-  </div>
+  <div id="standingsBody"><table class="st" id="standingsTbl"></table></div>
 </div>
-
 <div class="controls">
-  <select class="team-sel" id="teamSel" onchange="render()">
+  <select id="teamSel" onchange="render()">
     <option value="">All teams</option>
     <option>Mets</option><option>Blue Jays</option><option>Phillies</option><option>Pirates</option>
     <option>Red Sox</option><option>Brewers</option><option>Reds</option><option>Giants</option>
   </select>
-  <input type="text" class="search" id="srch" placeholder="Search player or team…" oninput="render()">
 </div>
-
 <div class="stats" id="statsRow"></div>
-
 <div class="tabs">
   <button class="tab on" onclick="setTab('all',this)">All</button>
-  <button class="tab" onclick="setTab('filed',this)">Both filed</button>
-  <button class="tab" onclick="setTab('partial',this)">Partial</button>
   <button class="tab" onclick="setTab('missing',this)">Missing</button>
   <button class="tab" onclick="setTab('upcoming',this)">Upcoming</button>
 </div>
-
 <div id="gameList"></div>
 </div>
-
 <script>
-const TODAY = new Date(2026,3,24); // Apr 24 2026
+const TODAY=new Date(2026,3,24);
+function d(m,day){return new Date(2026,m-1,day);}
+const MN=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const DN=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+function fmtD(dt){return `${DN[dt.getDay()]}, ${MN[dt.getMonth()]} ${dt.getDate()}`;}
+function isPast(dt){return dt<TODAY;}
+function restDays(p){return p<=20?0:p<=35?1:p<=50?2:p<=65?3:4;}
+function pitchColor(p){return p<=35?'#2d8a3e':p<=50?'#b07800':p<=65?'#c05000':'#8b1a1a';}
+function nextGameDate(team){
+  const up=SCHED.filter(g=>(g.home===team||g.away===team)&&g.dt>TODAY);
+  return up.length?up[0].dt:null;
+}
+function isEligible(gd,pitches,targetDate){
+  if(!targetDate) return true;
+  const rd=restDays(pitches);
+  const el=new Date(gd); el.setDate(el.getDate()+rd+1);
+  return el<=targetDate;
+}
 
-function d(m,day){ return new Date(2026,m-1,day); }
-
-// Full 56-game schedule
 const SCHED=[
- {id:1, dt:d(3,7), dow:'Sat',time:'12:30 PM',field:'Central',home:'Mets',     away:'Blue Jays'},
- {id:2, dt:d(3,7), dow:'Sat',time:'3:00 PM', field:'Central',home:'Phillies', away:'Pirates'},
- {id:3, dt:d(3,7), dow:'Sat',time:'3:00 PM', field:'Britton', home:'Red Sox', away:'Brewers'},
- {id:4, dt:d(3,8), dow:'Sun',time:'9:00 AM', field:'Britton', home:'Reds',    away:'Giants'},
- {id:5, dt:d(3,10),dow:'Tue',time:'5:15 PM', field:'Britton', home:'Red Sox', away:'Reds',     bye:'Blue Jays'},
- {id:6, dt:d(3,11),dow:'Wed',time:'5:15 PM', field:'Britton', home:'Giants',  away:'Pirates',  bye:'Mets'},
- {id:7, dt:d(3,12),dow:'Thu',time:'5:15 PM', field:'Britton', home:'Phillies',away:'Brewers'},
- {id:8, dt:d(3,14),dow:'Sat',time:'9:00 AM', field:'Central',home:'Reds',     away:'Phillies'},
- {id:9, dt:d(3,14),dow:'Sat',time:'11:30 AM',field:'Central',home:'Pirates',  away:'Mets'},
- {id:10,dt:d(3,14),dow:'Sat',time:'9:00 AM', field:'Britton', home:'Giants',  away:'Brewers'},
- {id:11,dt:d(3,14),dow:'Sat',time:'2:00 PM', field:'Britton', home:'Blue Jays',away:'Red Sox'},
- {id:12,dt:d(3,16),dow:'Mon',time:'5:15 PM', field:'Britton', home:'Pirates', away:'Red Sox'},
- {id:13,dt:d(3,17),dow:'Tue',time:'5:15 PM', field:'Britton', home:'Brewers', away:'Giants'},
- {id:14,dt:d(3,18),dow:'Wed',time:'5:15 PM', field:'Britton', home:'Phillies',away:'Mets'},
- {id:15,dt:d(3,19),dow:'Thu',time:'5:15 PM', field:'Britton', home:'Blue Jays',away:'Reds'},
- {id:16,dt:d(3,21),dow:'Sat',time:'9:00 AM', field:'Central',home:'Blue Jays',away:'Pirates'},
- {id:17,dt:d(3,21),dow:'Sat',time:'11:30 AM',field:'Central',home:'Brewers',  away:'Reds'},
- {id:18,dt:d(3,21),dow:'Sat',time:'9:00 AM', field:'Britton', home:'Giants',  away:'Phillies'},
- {id:19,dt:d(3,21),dow:'Sat',time:'2:00 PM', field:'Britton', home:'Red Sox', away:'Mets'},
- {id:20,dt:d(3,24),dow:'Tue',time:'5:15 PM', field:'Britton', home:'Mets',    away:'Brewers',  bye:'Pirates'},
- {id:21,dt:d(3,25),dow:'Wed',time:'5:15 PM', field:'Britton', home:'Blue Jays',away:'Giants',  bye:'Reds'},
- {id:22,dt:d(3,26),dow:'Thu',time:'5:15 PM', field:'Britton', home:'Red Sox', away:'Phillies'},
- {id:23,dt:d(3,28),dow:'Sat',time:'9:00 AM', field:'Central',home:'Brewers',  away:'Blue Jays'},
- {id:24,dt:d(3,28),dow:'Sat',time:'11:30 AM',field:'Central',home:'Giants',   away:'Red Sox'},
- {id:25,dt:d(3,28),dow:'Sat',time:'9:00 AM', field:'Britton', home:'Pirates', away:'Phillies'},
- {id:26,dt:d(3,28),dow:'Sat',time:'2:00 PM', field:'Britton', home:'Mets',    away:'Reds'},
- {id:27,dt:d(4,6), dow:'Mon',time:'5:15 PM', field:'Britton', home:'Blue Jays',away:'Mets'},
- {id:28,dt:d(4,7), dow:'Tue',time:'5:15 PM', field:'Britton', home:'Phillies',away:'Giants'},
- {id:29,dt:d(4,8), dow:'Wed',time:'5:15 PM', field:'Britton', home:'Reds',    away:'Red Sox'},
- {id:30,dt:d(4,9), dow:'Thu',time:'5:15 PM', field:'Britton', home:'Brewers', away:'Pirates'},
- {id:31,dt:d(4,11),dow:'Sat',time:'9:00 AM', field:'Central',home:'Reds',     away:'Brewers'},
- {id:32,dt:d(4,11),dow:'Sat',time:'11:30 AM',field:'Central',home:'Blue Jays',away:'Phillies'},
- {id:33,dt:d(4,11),dow:'Sat',time:'9:00 AM', field:'Britton', home:'Giants',  away:'Mets'},
- {id:34,dt:d(4,11),dow:'Sat',time:'2:00 PM', field:'Britton', home:'Red Sox', away:'Pirates'},
- {id:35,dt:d(4,13),dow:'Mon',time:'5:15 PM', field:'Britton', home:'Pirates', away:'Reds'},
- {id:36,dt:d(4,14),dow:'Tue',time:'5:15 PM', field:'Britton', home:'Brewers', away:'Phillies'},
- {id:37,dt:d(4,15),dow:'Wed',time:'5:15 PM', field:'Britton', home:'Mets',    away:'Red Sox'},
- {id:38,dt:d(4,16),dow:'Thu',time:'5:15 PM', field:'Britton', home:'Giants',  away:'Blue Jays'},
- {id:39,dt:d(4,18),dow:'Sat',time:'9:00 AM', field:'Central',home:'Pirates',  away:'Giants'},
- {id:40,dt:d(4,18),dow:'Sat',time:'11:30 AM',field:'Central',home:'Brewers',  away:'Mets'},
- {id:41,dt:d(4,18),dow:'Sat',time:'9:00 AM', field:'Britton', home:'Phillies',away:'Reds'},
- {id:42,dt:d(4,18),dow:'Sat',time:'2:00 PM', field:'Britton', home:'Red Sox', away:'Blue Jays'},
- {id:43,dt:d(4,21),dow:'Tue',time:'5:15 PM', field:'Britton', home:'Pirates', away:'Blue Jays',bye:'Phillies'},
- {id:44,dt:d(4,22),dow:'Wed',time:'5:15 PM', field:'Britton', home:'Brewers', away:'Red Sox',  bye:'Giants'},
- {id:45,dt:d(4,23),dow:'Thu',time:'5:15 PM', field:'Britton', home:'Reds',    away:'Mets'},
- {id:46,dt:d(4,25),dow:'Sat',time:'9:00 AM', field:'Central',home:'Mets',     away:'Giants'},
- {id:47,dt:d(4,25),dow:'Sat',time:'11:30 AM',field:'Central',home:'Phillies', away:'Red Sox'},
- {id:48,dt:d(4,25),dow:'Sat',time:'9:00 AM', field:'Britton', home:'Pirates', away:'Brewers'},
- {id:49,dt:d(4,25),dow:'Sat',time:'2:00 PM', field:'Britton', home:'Reds',    away:'Blue Jays'},
- {id:50,dt:d(4,28),dow:'Tue',time:'5:15 PM', field:'Britton', home:'Mets',    away:'Pirates',  bye:'Red Sox'},
- {id:51,dt:d(4,29),dow:'Wed',time:'5:15 PM', field:'Britton', home:'Giants',  away:'Reds',     bye:'Brewers'},
- {id:52,dt:d(4,30),dow:'Thu',time:'5:15 PM', field:'Britton', home:'Phillies',away:'Blue Jays'},
- {id:53,dt:d(5,2), dow:'Sat',time:'9:00 AM', field:'Central',home:'Reds',     away:'Pirates'},
- {id:54,dt:d(5,2), dow:'Sat',time:'11:30 AM',field:'Central',home:'Red Sox',  away:'Giants'},
- {id:55,dt:d(5,2), dow:'Sat',time:'9:00 AM', field:'Britton', home:'Mets',    away:'Phillies'},
- {id:56,dt:d(5,2), dow:'Sat',time:'2:00 PM', field:'Britton', home:'Blue Jays',away:'Brewers'},
+ {id:1,dt:d(3,7),time:'12:30 PM',field:'Central',home:'Mets',away:'Blue Jays'},
+ {id:2,dt:d(3,7),time:'3:00 PM',field:'Central',home:'Phillies',away:'Pirates'},
+ {id:3,dt:d(3,7),time:'3:00 PM',field:'Britton',home:'Red Sox',away:'Brewers'},
+ {id:4,dt:d(3,8),time:'9:00 AM',field:'Britton',home:'Reds',away:'Giants'},
+ {id:5,dt:d(3,10),time:'5:15 PM',field:'Britton',home:'Red Sox',away:'Reds'},
+ {id:6,dt:d(3,11),time:'5:15 PM',field:'Britton',home:'Giants',away:'Pirates'},
+ {id:7,dt:d(3,12),time:'5:15 PM',field:'Britton',home:'Phillies',away:'Brewers'},
+ {id:8,dt:d(3,14),time:'9:00 AM',field:'Central',home:'Reds',away:'Phillies'},
+ {id:9,dt:d(3,14),time:'11:30 AM',field:'Central',home:'Pirates',away:'Mets'},
+ {id:10,dt:d(3,14),time:'9:00 AM',field:'Britton',home:'Giants',away:'Brewers'},
+ {id:11,dt:d(3,14),time:'2:00 PM',field:'Britton',home:'Blue Jays',away:'Red Sox'},
+ {id:12,dt:d(3,16),time:'5:15 PM',field:'Britton',home:'Pirates',away:'Red Sox'},
+ {id:13,dt:d(3,17),time:'5:15 PM',field:'Britton',home:'Brewers',away:'Giants'},
+ {id:14,dt:d(3,18),time:'5:15 PM',field:'Britton',home:'Phillies',away:'Mets'},
+ {id:15,dt:d(3,19),time:'5:15 PM',field:'Britton',home:'Blue Jays',away:'Reds'},
+ {id:16,dt:d(3,21),time:'9:00 AM',field:'Central',home:'Blue Jays',away:'Pirates'},
+ {id:17,dt:d(3,21),time:'11:30 AM',field:'Central',home:'Brewers',away:'Reds'},
+ {id:18,dt:d(3,21),time:'9:00 AM',field:'Britton',home:'Giants',away:'Phillies'},
+ {id:19,dt:d(3,21),time:'2:00 PM',field:'Britton',home:'Red Sox',away:'Mets'},
+ {id:20,dt:d(3,23),time:'5:15 PM',field:'Britton',home:'Mets',away:'Brewers'},
+ {id:21,dt:d(3,25),time:'5:15 PM',field:'Britton',home:'Blue Jays',away:'Giants'},
+ {id:22,dt:d(3,26),time:'5:15 PM',field:'Britton',home:'Red Sox',away:'Phillies'},
+ {id:23,dt:d(3,28),time:'9:00 AM',field:'Central',home:'Brewers',away:'Blue Jays'},
+ {id:24,dt:d(3,28),time:'11:30 AM',field:'Central',home:'Giants',away:'Red Sox'},
+ {id:25,dt:d(3,28),time:'9:00 AM',field:'Britton',home:'Pirates',away:'Phillies'},
+ {id:26,dt:d(4,20),time:'5:15 PM',field:'Central',home:'Mets',away:'Reds'},
+ {id:27,dt:d(4,6),time:'5:15 PM',field:'Britton',home:'Blue Jays',away:'Mets'},
+ {id:28,dt:d(4,7),time:'5:15 PM',field:'Britton',home:'Phillies',away:'Giants'},
+ {id:29,dt:d(4,8),time:'5:15 PM',field:'Britton',home:'Reds',away:'Red Sox'},
+ {id:30,dt:d(4,9),time:'5:15 PM',field:'Britton',home:'Brewers',away:'Pirates'},
+ {id:31,dt:d(4,11),time:'9:00 AM',field:'Central',home:'Reds',away:'Brewers'},
+ {id:32,dt:d(4,11),time:'11:30 AM',field:'Central',home:'Blue Jays',away:'Phillies'},
+ {id:33,dt:d(4,11),time:'9:00 AM',field:'Britton',home:'Giants',away:'Mets'},
+ {id:34,dt:d(4,11),time:'2:00 PM',field:'Britton',home:'Red Sox',away:'Pirates'},
+ {id:35,dt:d(4,13),time:'5:15 PM',field:'Britton',home:'Pirates',away:'Reds'},
+ {id:36,dt:d(4,14),time:'5:15 PM',field:'Britton',home:'Brewers',away:'Phillies'},
+ {id:37,dt:d(4,15),time:'5:15 PM',field:'Britton',home:'Mets',away:'Red Sox'},
+ {id:38,dt:d(4,16),time:'5:15 PM',field:'Britton',home:'Giants',away:'Blue Jays'},
+ {id:39,dt:d(4,18),time:'9:00 AM',field:'Central',home:'Pirates',away:'Giants'},
+ {id:40,dt:d(4,18),time:'11:30 AM',field:'Central',home:'Brewers',away:'Mets'},
+ {id:41,dt:d(4,18),time:'9:00 AM',field:'Britton',home:'Phillies',away:'Reds'},
+ {id:42,dt:d(4,18),time:'2:00 PM',field:'Britton',home:'Red Sox',away:'Blue Jays'},
+ {id:43,dt:d(4,22),time:'5:15 PM',field:'Central',home:'Pirates',away:'Blue Jays'},
+ {id:44,dt:d(4,22),time:'5:15 PM',field:'Britton',home:'Brewers',away:'Red Sox'},
+ {id:45,dt:d(4,23),time:'5:15 PM',field:'Britton',home:'Reds',away:'Mets'},
+ {id:46,dt:d(4,25),time:'9:00 AM',field:'Central',home:'Mets',away:'Giants'},
+ {id:47,dt:d(4,25),time:'11:30 AM',field:'Central',home:'Phillies',away:'Red Sox'},
+ {id:48,dt:d(4,25),time:'9:00 AM',field:'Britton',home:'Pirates',away:'Brewers'},
+ {id:49,dt:d(4,25),time:'2:00 PM',field:'Britton',home:'Reds',away:'Blue Jays'},
+ {id:50,dt:d(4,28),time:'5:15 PM',field:'Britton',home:'Mets',away:'Pirates'},
+ {id:51,dt:d(4,29),time:'5:15 PM',field:'Britton',home:'Giants',away:'Reds'},
+ {id:52,dt:d(4,30),time:'5:15 PM',field:'Britton',home:'Phillies',away:'Blue Jays'},
+ {id:53,dt:d(5,2),time:'9:00 AM',field:'Central',home:'Reds',away:'Pirates'},
+ {id:54,dt:d(5,2),time:'11:30 AM',field:'Central',home:'Red Sox',away:'Giants'},
+ {id:55,dt:d(5,2),time:'9:00 AM',field:'Britton',home:'Mets',away:'Phillies'},
+ {id:56,dt:d(5,2),time:'2:00 PM',field:'Britton',home:'Blue Jays',away:'Brewers'},
 ];
 
-// Affidavit + score data
 const AFF={
- 1:{hs:6,as:3,teams:{
-  'Blue Jays':{file:'game1bluejays.xlsx',pitchers:[
-   {side:'away',name:'Bryson Barlics',p:39,gd:d(3,7)},
-   {side:'away',name:'Ryan Ferguson',p:44,gd:d(3,7)},
-   {side:'away',name:'Gavin Williams',p:13,gd:d(3,7)},
-  ]},
-  'Mets':{file:'game1mets.jpeg',pitchers:[
-   {side:'home',name:'Kai',p:20,gd:d(3,7)},
-   {side:'home',name:'Sayer',p:28,gd:d(3,7)},
-   {side:'home',name:'Mattie',p:42,gd:d(3,7)},
-  ]},
- }},
- 2:{hs:4,as:3,teams:{
-  'Phillies':{file:'game2phillies.xlsx',pitchers:[
-   {side:'home',name:'Andrew',p:34,gd:d(3,7)},
-   {side:'home',name:'Lucas V.',p:38,gd:d(3,7)},
-   {side:'home',name:'Mason',p:24,gd:d(3,7)},
-  ]},
-  'Pirates':{file:'game2pirates.xlsx',pitchers:[
-   {side:'away',name:'Caden',p:22,gd:d(3,7)},
-   {side:'away',name:'Chase',p:29,gd:d(3,7)},
-   {side:'away',name:'Jaxon',p:20,gd:d(3,7)},
-   {side:'away',name:'Powell',p:29,gd:d(3,7)},
-   {side:'away',name:'Xander',p:21,gd:d(3,7)},
-  ]},
- }},
- 3:{hs:5,as:10,teams:{
-  'Red Sox':{file:'game3redsox.pdf',pitchers:[]},
-  'Brewers':{file:'game3brewers.xlsx',pitchers:[
-   {side:'away',name:'Casey',p:45,gd:d(3,7)},
-   {side:'away',name:'Logan',p:22,gd:d(3,7)},
-   {side:'away',name:'Jackson',p:24,gd:d(3,7)},
-  ]},
- }},
- 4:{hs:11,as:11,teams:{
-  'Giants':{file:'game4giants.jpeg',pitchers:[
-   {side:'away',name:'Lorenzo',p:34,gd:d(3,8)},
-   {side:'away',name:'Owen',p:18,gd:d(3,8)},
-   {side:'away',name:'Chase',p:51,gd:d(3,8)},
-  ]},
-  'Reds':{file:'game4reds.xlsx',pitchers:[
-   {side:'home',name:'Cameron',p:45,gd:d(3,8)},
-   {side:'home',name:'Jake',p:18,gd:d(3,8)},
-   {side:'home',name:'JC',p:32,gd:d(3,8)},
-   {side:'home',name:'Bodie',p:18,gd:d(3,8)},
-  ]},
- }},
- 5:{hs:7,as:8,teams:{
-  'Red Sox':{file:'game5redsox.xlsx',pitchers:[
-   {side:'home',name:'Jon',p:63,gd:d(3,10)},
-   {side:'home',name:'Kayson',p:50,gd:d(3,10)},
-   {side:'home',name:'Chris',p:38,gd:d(3,10)},
-  ]},
- }},
- 6:{hs:23,as:5,teams:{
-  'Giants':{file:'game6giants.jpeg',pitchers:[
-   {side:'home',name:'Lorenzo',p:41,gd:d(3,11)},
-   {side:'home',name:'Chase',p:31,gd:d(3,11)},
-   {side:'home',name:'Oliver',p:31,gd:d(3,11)},
-  ]},
- }},
- 8:{hs:8,as:7,teams:{
-  'Phillies':{file:'game8phillies.xlsx',pitchers:[
-   {side:'away',name:'Lucas C.',p:19,gd:d(3,14)},
-   {side:'away',name:'Lucas V.',p:52,gd:d(3,14)},
-   {side:'away',name:'Lino',p:20,gd:d(3,14)},
-  ]},
-  'Reds':{file:'game8reds.xlsx',pitchers:[
-   {side:'home',name:'Joey',p:57,gd:d(3,14)},
-   {side:'home',name:'Cameron',p:47,gd:d(3,14)},
-   {side:'home',name:'Jake',p:42,gd:d(3,14)},
-  ]},
- }},
- 9:{hs:6,as:5,teams:{
-  'Pirates':{file:'game9pirates.xlsx',pitchers:[
-   {side:'home',name:'Caden',p:40,gd:d(3,14)},
-   {side:'home',name:'Chase',p:45,gd:d(3,14)},
-   {side:'home',name:'Jaxon',p:35,gd:d(3,14)},
-   {side:'home',name:'Powell',p:42,gd:d(3,14)},
-  ]},
- }},
- 10:{hs:4,as:10,teams:{
-  'Brewers':{file:'game10brewers.xlsx',pitchers:[
-   {side:'away',name:'Casey',p:24,gd:d(3,14)},
-   {side:'away',name:'Logan',p:62,gd:d(3,14)},
-   {side:'away',name:'Jesse',p:25,gd:d(3,14)},
-  ]},
- }},
- 11:{hs:1,as:18,note:'Affidavit shows Blue Jays @ Mets — schedule lists Blue Jays (home) vs Red Sox',teams:{
-  'Blue Jays':{file:'game11bluejays.xlsx',pitchers:[
-   {side:'away',name:'Gavin Williams',p:61,gd:d(3,14)},
-   {side:'away',name:'Joe Burks',p:28,gd:d(3,14)},
-   {side:'away',name:'Joey Fabbri',p:52,gd:d(3,14)},
-   {side:'away',name:'Ryan Ferguson',p:26,gd:d(3,14)},
-  ]},
- }},
- 12:{hs:11,as:13,teams:{
-  'Pirates':{file:'game12pirates.xlsx',pitchers:[
-   {side:'home',name:'Marco',p:49,gd:d(3,16)},
-   {side:'home',name:'Jaxon',p:13,gd:d(3,16)},
-   {side:'home',name:'Trey',p:44,gd:d(3,16)},
-   {side:'home',name:'Xander',p:24,gd:d(3,16)},
-  ]},
- }},
+ 1:{hs:6,as:3,teams:{'Blue Jays':{file:'game1bluejays.xlsx',pitchers:[{side:'away',name:'Bryson Barlics',p:39,gd:d(3,7)},{side:'away',name:'Ryan Ferguson',p:44,gd:d(3,7)},{side:'away',name:'Gavin Williams',p:13,gd:d(3,7)}]},'Mets':{file:'game1mets.jpeg',pitchers:[{side:'home',name:'Kai',p:20,gd:d(3,7)},{side:'home',name:'Sayer',p:28,gd:d(3,7)},{side:'home',name:'Mattie',p:42,gd:d(3,7)}]}}},
+ 2:{hs:4,as:3,teams:{'Phillies':{file:'game2phillies.xlsx',pitchers:[{side:'home',name:'Andrew',p:34,gd:d(3,7)},{side:'home',name:'Lucas V.',p:38,gd:d(3,7)},{side:'home',name:'Mason',p:24,gd:d(3,7)}]},'Pirates':{file:'game2pirates.xlsx',pitchers:[{side:'away',name:'Caden',p:22,gd:d(3,7)},{side:'away',name:'Chase',p:29,gd:d(3,7)},{side:'away',name:'Jaxon',p:20,gd:d(3,7)},{side:'away',name:'Powell',p:29,gd:d(3,7)},{side:'away',name:'Xander',p:21,gd:d(3,7)}]}}},
+ 3:{hs:5,as:10,teams:{'Red Sox':{file:'game3redsox.pdf',pitchers:[]},'Brewers':{file:'game3brewers.xlsx',pitchers:[{side:'away',name:'Casey',p:45,gd:d(3,7)},{side:'away',name:'Logan',p:22,gd:d(3,7)},{side:'away',name:'Jackson',p:24,gd:d(3,7)}]}}},
+ 4:{hs:11,as:11,teams:{'Giants':{file:'game4giants.jpeg',pitchers:[{side:'away',name:'Lorenzo',p:34,gd:d(3,8)},{side:'away',name:'Owen',p:18,gd:d(3,8)},{side:'away',name:'Chase',p:51,gd:d(3,8)}]},'Reds':{file:'game4reds.xlsx',pitchers:[{side:'home',name:'Cameron',p:45,gd:d(3,8)},{side:'home',name:'Jake',p:18,gd:d(3,8)},{side:'home',name:'JC',p:32,gd:d(3,8)},{side:'home',name:'Bodie',p:18,gd:d(3,8)}]}}},
+ 5:{hs:7,as:8,teams:{'Red Sox':{file:'game5redsox.xlsx',pitchers:[{side:'home',name:'Jon',p:63,gd:d(3,10)},{side:'home',name:'Kayson',p:50,gd:d(3,10)},{side:'home',name:'Chris',p:38,gd:d(3,10)}]}}},
+ 6:{hs:23,as:5,teams:{'Giants':{file:'game6giants.jpeg',pitchers:[{side:'home',name:'Lorenzo',p:41,gd:d(3,11)},{side:'home',name:'Chase',p:31,gd:d(3,11)},{side:'home',name:'Oliver',p:31,gd:d(3,11)}]}}},
+ 8:{hs:8,as:7,teams:{'Phillies':{file:'game8phillies.xlsx',pitchers:[{side:'away',name:'Lucas C.',p:19,gd:d(3,14)},{side:'away',name:'Lucas V.',p:52,gd:d(3,14)},{side:'away',name:'Lino',p:20,gd:d(3,14)}]},'Reds':{file:'game8reds.xlsx',pitchers:[{side:'home',name:'Joey',p:57,gd:d(3,14)},{side:'home',name:'Cameron',p:47,gd:d(3,14)},{side:'home',name:'Jake',p:42,gd:d(3,14)}]}}},
+ 9:{hs:6,as:5,teams:{'Pirates':{file:'game9pirates.xlsx',pitchers:[{side:'home',name:'Caden',p:40,gd:d(3,14)},{side:'home',name:'Chase',p:45,gd:d(3,14)},{side:'home',name:'Jaxon',p:35,gd:d(3,14)},{side:'home',name:'Powell',p:42,gd:d(3,14)}]}}},
+ 10:{hs:4,as:10,teams:{'Brewers':{file:'game10brewers.xlsx',pitchers:[{side:'away',name:'Casey',p:24,gd:d(3,14)},{side:'away',name:'Logan',p:62,gd:d(3,14)},{side:'away',name:'Jesse',p:25,gd:d(3,14)}]},'Giants':{file:'game10giants.jpeg',pitchers:[{side:'home',name:'Lorenzo',p:52,gd:d(3,14)},{side:'home',name:'Harrison',p:16,gd:d(3,14)},{side:'home',name:'Aiden',p:35,gd:d(3,14)},{side:'home',name:'Oliver',p:30,gd:d(3,14)}]}}},
+ 11:{hs:1,as:18,note:'Affidavit shows Blue Jays @ Mets — schedule lists Blue Jays (home) vs Red Sox',teams:{'Blue Jays':{file:'game11bluejays.xlsx',pitchers:[{side:'away',name:'Gavin Williams',p:61,gd:d(3,14)},{side:'away',name:'Joe Burks',p:28,gd:d(3,14)},{side:'away',name:'Joey Fabbri',p:52,gd:d(3,14)},{side:'away',name:'Ryan Ferguson',p:26,gd:d(3,14)}]}}},
+ 12:{hs:11,as:13,teams:{'Pirates':{file:'game12pirates.xlsx',pitchers:[{side:'home',name:'Marco',p:49,gd:d(3,16)},{side:'home',name:'Jaxon',p:13,gd:d(3,16)},{side:'home',name:'Trey',p:44,gd:d(3,16)},{side:'home',name:'Xander',p:24,gd:d(3,16)}]},'Red Sox':{file:'game12redsox.xlsx',pitchers:[{side:'away',name:'Gavin',p:28,gd:d(3,16)},{side:'away',name:'Kaleb',p:62,gd:d(3,16)},{side:'away',name:'Kayson',p:34,gd:d(3,16)}]}}},
+ 14:{hs:5,as:8,teams:{'Phillies':{file:'game14phillies.xlsx',pitchers:[{side:'home',name:'Andrew',p:34,gd:d(3,18)},{side:'home',name:'Lucas V.',p:49,gd:d(3,18)},{side:'home',name:'Lino',p:36,gd:d(3,18)}]}}},
+ 15:{hs:9,as:18,teams:{'Blue Jays':{file:'game15bluejays.xlsx',pitchers:[{side:'away',name:'Bryson Barlics',p:8,gd:d(3,19)},{side:'away',name:'Joe Burks',p:34,gd:d(3,19)},{side:'away',name:'Joey Fabbri',p:28,gd:d(3,19)},{side:'away',name:'Ryan Ferguson',p:45,gd:d(3,19)}]},'Reds':{file:'game15reds.xlsx',pitchers:[{side:'home',name:'Jake',p:11,gd:d(3,19)},{side:'home',name:'JC',p:33,gd:d(3,19)},{side:'home',name:'Cruz',p:37,gd:d(3,19)},{side:'home',name:'AJ',p:31,gd:d(3,19)}]}}},
+ 16:{hs:9,as:9,teams:{'Blue Jays':{file:'game16bluejays.xlsx',pitchers:[{side:'home',name:'Gavin Williams',p:35,gd:d(3,21)},{side:'home',name:'Bryson Barlics',p:64,gd:d(3,21)},{side:'home',name:'Joey Fabbri',p:28,gd:d(3,21)}]},'Pirates':{file:'game16pirates.xlsx',pitchers:[{side:'away',name:'Caden',p:45,gd:d(3,21)},{side:'away',name:'Chase',p:47,gd:d(3,21)},{side:'away',name:'Jaxon',p:22,gd:d(3,21)},{side:'away',name:'Powell',p:45,gd:d(3,21)}]}}},
+ 17:{hs:3,as:5,teams:{'Reds':{file:'game17reds.xlsx',pitchers:[{side:'away',name:'Joey',p:65,gd:d(3,21)},{side:'away',name:'Cameron',p:23,gd:d(3,21)},{side:'away',name:'Jake',p:42,gd:d(3,21)}]}}},
+ 18:{hs:11,as:13,teams:{'Phillies':{file:'game18phillies.xlsx',pitchers:[{side:'away',name:'Lucas C.',p:62,gd:d(3,21)},{side:'away',name:'Lucas V.',p:6,gd:d(3,21)},{side:'away',name:'Jovan',p:50,gd:d(3,21)}]},'Giants':{file:'game18giants.jpeg',pitchers:[{side:'home',name:'Lorenzo',p:20,gd:d(3,21)},{side:'home',name:'Angelo',p:42,gd:d(3,21)},{side:'home',name:'Harrison',p:6,gd:d(3,21)},{side:'home',name:'Oliver',p:21,gd:d(3,21)},{side:'home',name:'Aiden',p:21,gd:d(3,21)}]}}},
+ 19:{hs:9,as:1,teams:{'Red Sox':{file:'game19redsox.xlsx',pitchers:[{side:'home',name:'Kaleb',p:38,gd:d(3,21)},{side:'home',name:'Jon',p:42,gd:d(3,21)},{side:'home',name:'Kayson',p:16,gd:d(3,21)},{side:'home',name:'Nathaniel',p:18,gd:d(3,21)}]},'Mets':{file:'game19mets.jpeg',pitchers:[{side:'away',name:'W. Billman',p:19,gd:d(3,21)},{side:'away',name:'K. Pacheco',p:52,gd:d(3,21)},{side:'away',name:'M. McBride',p:19,gd:d(3,21)}]}}},
+ 20:{hs:2,as:8,teams:{'Brewers':{file:'game20brewers.xlsx',pitchers:[{side:'away',name:'Casey',p:61,gd:d(3,23)},{side:'away',name:'Weston',p:44,gd:d(3,23)}]},'Mets':{file:'game20mets.jpeg',pitchers:[{side:'home',name:'R. Kanney',p:11,gd:d(3,23)},{side:'home',name:'J. Villarral',p:33,gd:d(3,23)},{side:'home',name:'J. Rodriguez',p:29,gd:d(3,23)}]}}},
+ 21:{hs:5,as:10,teams:{'Blue Jays':{file:'game21bluejays.xlsx',pitchers:[{side:'home',name:'Joe Burks',p:49,gd:d(3,25)},{side:'home',name:'Joey Fabbri',p:49,gd:d(3,25)},{side:'home',name:'Gavin Williams',p:10,gd:d(3,25)},{side:'home',name:'Bryson Barlics',p:47,gd:d(3,25)}]},'Giants':{file:'game21giants.jpeg',pitchers:[{side:'away',name:'Angelo',p:47,gd:d(3,25)},{side:'away',name:'Lorenzo',p:16,gd:d(3,25)},{side:'away',name:'Owen',p:14,gd:d(3,25)},{side:'away',name:'Chase',p:12,gd:d(3,25)}]}}},
+ 22:{hs:8,as:2,teams:{'Phillies':{file:'game22phillies.xlsx',pitchers:[{side:'away',name:'Andrew',p:24,gd:d(3,26)},{side:'away',name:'Lucas C.',p:42,gd:d(3,26)},{side:'away',name:'Jovan',p:45,gd:d(3,26)}]},'Red Sox':{file:'game22redsox.xlsx',pitchers:[{side:'home',name:'Kaleb',p:35,gd:d(3,26)},{side:'home',name:'Jon',p:32,gd:d(3,26)},{side:'home',name:'Kayson',p:18,gd:d(3,26)}]}}},
+ 23:{hs:11,as:6,teams:{'Blue Jays':{file:'game23bluejays.xlsx',pitchers:[{side:'away',name:'Joe Burks',p:39,gd:d(3,28)},{side:'away',name:'Bryson Barlics',p:42,gd:d(3,28)},{side:'away',name:'Joey Fabbri',p:38,gd:d(3,28)}]},'Brewers':{file:'game23brewers.xlsx',pitchers:[{side:'home',name:'Casey',p:41,gd:d(3,28)},{side:'home',name:'Jackson',p:33,gd:d(3,28)},{side:'home',name:'Jamison',p:70,gd:d(3,28)}]}}},
+ 24:{hs:10,as:10,teams:{'Red Sox':{file:'game24redsox.pdf',pitchers:[{side:'away',name:'Jon',p:45,gd:d(3,28)},{side:'away',name:'Kayson',p:18,gd:d(3,28)},{side:'away',name:'Keerit',p:45,gd:d(3,28)}]},'Giants':{file:'game24giants.jpeg',pitchers:[{side:'home',name:'Angelo',p:20,gd:d(3,28)},{side:'home',name:'Lorenzo',p:43,gd:d(3,28)},{side:'home',name:'Harrison',p:4,gd:d(3,28)},{side:'home',name:'Owen',p:23,gd:d(3,28)},{side:'home',name:'Oliver',p:16,gd:d(3,28)},{side:'home',name:'Chase',p:20,gd:d(3,28)}]}}},
+ 25:{hs:5,as:8,teams:{'Phillies':{file:'game25phillies.xlsx',pitchers:[{side:'away',name:'Andrew',p:49,gd:d(3,28)},{side:'away',name:'Lucas V.',p:24,gd:d(3,28)},{side:'away',name:'Archer',p:38,gd:d(3,28)}]},'Pirates':{file:'game25pirates.xlsx',pitchers:[{side:'home',name:'Caden',p:35,gd:d(3,28)},{side:'home',name:'Chase',p:29,gd:d(3,28)},{side:'home',name:'Jaxon',p:19,gd:d(3,28)},{side:'home',name:'Powell',p:14,gd:d(3,28)},{side:'home',name:'Trey',p:16,gd:d(3,28)},{side:'home',name:'Xander',p:35,gd:d(3,28)}]}}},
+ 27:{hs:9,as:5,teams:{'Blue Jays':{file:'game27bluejays.xlsx',pitchers:[{side:'away',name:'Val',p:39,gd:d(4,6)},{side:'away',name:'Joe Burks',p:48,gd:d(4,6)},{side:'away',name:'Bryson Barlics',p:24,gd:d(4,6)},{side:'away',name:'Gavin Williams',p:29,gd:d(4,6)}]}}},
+ 28:{hs:10,as:9,teams:{'Phillies':{file:'game28phillies.xlsx',pitchers:[{side:'home',name:'Andrew',p:40,gd:d(4,7)},{side:'home',name:'Lucas C.',p:48,gd:d(4,7)},{side:'home',name:'Lucas V.',p:18,gd:d(4,7)}]},'Giants':{file:'game28giants.jpeg',pitchers:[{side:'away',name:'Lorenzo',p:21,gd:d(4,7)},{side:'away',name:'Angelo',p:39,gd:d(4,7)},{side:'away',name:'Chase',p:18,gd:d(4,7)},{side:'away',name:'Oliver',p:36,gd:d(4,7)},{side:'away',name:'Skye',p:10,gd:d(4,7)}]}}},
+ 29:{hs:6,as:15,teams:{'Red Sox':{file:'game29redsox.pdf',pitchers:[{side:'away',name:'Jon',p:65,gd:d(4,8)},{side:'away',name:'Kayson',p:45,gd:d(4,8)},{side:'away',name:'Kaleb',p:16,gd:d(4,8)}]}}},
+ 30:{hs:9,as:10,teams:{'Brewers':{file:'game30brewers.xlsx',pitchers:[{side:'home',name:'Casey',p:33,gd:d(4,9)},{side:'home',name:'Weston',p:14,gd:d(4,9)},{side:'home',name:'Logan',p:65,gd:d(4,9)},{side:'home',name:'Jesse',p:23,gd:d(4,9)}]},'Pirates':{file:'game30pirates.xlsx',pitchers:[{side:'away',name:'Caden',p:24,gd:d(4,9)},{side:'away',name:'Chase',p:15,gd:d(4,9)},{side:'away',name:'Jaxon',p:12,gd:d(4,9)},{side:'away',name:'Trey',p:15,gd:d(4,9)},{side:'away',name:'Xander',p:16,gd:d(4,9)},{side:'away',name:'Powell',p:34,gd:d(4,9)}]}}},
+ 31:{hs:2,as:15,teams:{'Brewers':{file:'game31brewers.xlsx',pitchers:[{side:'away',name:'Casey',p:39,gd:d(4,11)},{side:'away',name:'Weston',p:54,gd:d(4,11)},{side:'away',name:'Jackson',p:11,gd:d(4,11)}]},'Reds':{file:'game31brewers.xlsx',pitchers:[{side:'home',name:'Joey',p:60,gd:d(4,11)},{side:'home',name:'Cameron',p:16,gd:d(4,11)},{side:'home',name:'JC',p:10,gd:d(4,11)},{side:'home',name:'AJ',p:20,gd:d(4,11)},{side:'home',name:'James',p:68,gd:d(4,11)}]}}},
+ 32:{hs:3,as:12,teams:{'Blue Jays':{file:'game32bluejays.xlsx',pitchers:[{side:'away',name:'Joe Burks',p:31,gd:d(4,11)},{side:'away',name:'Bryson Barlics',p:56,gd:d(4,11)}]}}},
+ 33:{hs:12,as:6,teams:{'Giants':{file:'game33giants.jpeg',pitchers:[{side:'home',name:'Angelo',p:30,gd:d(4,11)},{side:'home',name:'Lorenzo',p:47,gd:d(4,11)},{side:'home',name:'Owen',p:23,gd:d(4,11)},{side:'home',name:'Chase',p:27,gd:d(4,11)},{side:'home',name:'Oliver',p:22,gd:d(4,11)}]},'Mets':{file:'game33giants.jpeg',pitchers:[]}}},
+ 34:{hs:6,as:10,teams:{'Pirates':{file:'game34pirates.xlsx',pitchers:[{side:'away',name:'Caden',p:21,gd:d(4,11)},{side:'away',name:'Jaxon',p:23,gd:d(4,11)},{side:'away',name:'Powell',p:25,gd:d(4,11)},{side:'away',name:'Trey',p:35,gd:d(4,11)},{side:'away',name:'Xander',p:31,gd:d(4,11)}]},'Red Sox':{file:'game34redsox.pdf',pitchers:[]}}},
+ 35:{hs:6,as:13,teams:{'Pirates':{file:'game35pirates.xlsx',pitchers:[{side:'home',name:'Caden',p:32,gd:d(4,13)},{side:'home',name:'Chase',p:24,gd:d(4,13)},{side:'home',name:'Jaxon',p:42,gd:d(4,13)},{side:'home',name:'Powell',p:37,gd:d(4,13)},{side:'home',name:'Xander',p:23,gd:d(4,13)}]}}},
+ 36:{hs:14,as:8,teams:{'Phillies':{file:'game36phillies.xlsx',pitchers:[{side:'away',name:'Andrew',p:53,gd:d(4,14)},{side:'away',name:'Lucas C.',p:4,gd:d(4,14)},{side:'away',name:'Lucas V.',p:54,gd:d(4,14)}]},'Brewers':{file:'game36brewers.xlsx',pitchers:[{side:'home',name:'Casey',p:49,gd:d(4,14)},{side:'home',name:'Logan',p:44,gd:d(4,14)},{side:'home',name:'Jackson',p:19,gd:d(4,14)}]}}},
+ 38:{hs:null,as:13,note:'Home score not recorded on affidavit',teams:{'Blue Jays':{file:'game38bluejays.xlsx',pitchers:[{side:'away',name:'Joey Fabbri',p:27,gd:d(4,16)},{side:'away',name:'Joe Burks',p:24,gd:d(4,16)},{side:'away',name:'Bryson Barlics',p:29,gd:d(4,16)},{side:'away',name:'Gavin Williams',p:30,gd:d(4,16)}]}}},
+ 39:{hs:10,as:13,teams:{'Pirates':{file:'game39pirates.xlsx',pitchers:[{side:'home',name:'Caden',p:26,gd:d(4,18)},{side:'home',name:'Chase',p:21,gd:d(4,18)},{side:'home',name:'Jaxon',p:34,gd:d(4,18)},{side:'home',name:'Marco',p:18,gd:d(4,18)},{side:'home',name:'Xander',p:25,gd:d(4,18)}]}}},
+ 40:{hs:7,as:8,teams:{'Brewers':{file:'game40brewers.xlsx',pitchers:[{side:'home',name:'Casey',p:56,gd:d(4,18)},{side:'home',name:'Weston',p:51,gd:d(4,18)},{side:'home',name:'Logan',p:29,gd:d(4,18)},{side:'home',name:'Jamison',p:23,gd:d(4,18)}]}}},
+ 41:{hs:9,as:17,teams:{'Phillies':{file:'game41phillies.xlsx',pitchers:[{side:'home',name:'Lucas C.',p:56,gd:d(4,18)},{side:'home',name:'Archer',p:22,gd:d(4,18)},{side:'home',name:'Lino',p:19,gd:d(4,18)},{side:'home',name:'Jovan',p:33,gd:d(4,18)},{side:'home',name:'Benjamin',p:30,gd:d(4,18)}]}}},
+ 42:{hs:8,as:7,teams:{'Blue Jays':{file:'game42bluejays.xlsx',pitchers:[{side:'away',name:'Joey Fabbri',p:31,gd:d(4,18)},{side:'away',name:'Bruno Silva',p:29,gd:d(4,18)},{side:'away',name:'Joe Burks',p:10,gd:d(4,18)},{side:'away',name:'Bryson Barlics',p:35,gd:d(4,18)}]}}},
+ 43:{hs:8,as:1,teams:{'Pirates':{file:'game43pirates.xlsx',pitchers:[{side:'home',name:'Caden',p:38,gd:d(4,22)},{side:'home',name:'Chase',p:25,gd:d(4,22)},{side:'home',name:'Jaxon',p:50,gd:d(4,22)}]}}},
+ 44:{hs:7,as:8,teams:{'Brewers':{file:'game44brewers.xlsx',pitchers:[{side:'home',name:'Casey',p:46,gd:d(4,22)},{side:'home',name:'Logan',p:25,gd:d(4,22)},{side:'home',name:'Weston',p:54,gd:d(4,22)},{side:'home',name:'Jamison',p:6,gd:d(4,22)}]},'Red Sox':{file:'game44brewers.xlsx',pitchers:[]}}},
 };
-
-// ── Compute next game date per team ─────────────────────────────────────
-// Find each team's next scheduled game strictly after TODAY
-function nextGameDate(team) {
-  const upcoming = SCHED.filter(g => (g.home===team||g.away===team) && g.dt > TODAY);
-  return upcoming.length ? upcoming[0].dt : null;
-}
-
-// ── Rest days logic ──────────────────────────────────────────────────────
-function restDays(p){ return p<=20?0:p<=35?1:p<=50?2:p<=65?3:4; }
-
-// Is pitcher eligible for a game on targetDate, given they pitched pitches on pitchDate?
-function isEligible(pitchDate, pitches, targetDate) {
-  if(!targetDate) return true; // no upcoming game, doesn't matter
-  const rd = restDays(pitches);
-  const eligDate = new Date(pitchDate);
-  eligDate.setDate(eligDate.getDate() + rd + 1);
-  // eligDate is the first date they CAN pitch again
-  // They are eligible if eligDate <= targetDate
-  return eligDate <= targetDate;
-}
-
-function pitchColor(p){ return p<=35?'#2d8a3e':p<=50?'#b07800':p<=65?'#c05000':'#8b1a1a'; }
-
-// ── Standings ───────────────────────────────────────────────────────────
-const RESULTS=[
- {h:'Mets',     a:'Blue Jays', hs:6,  as:3},
- {h:'Phillies', a:'Pirates',   hs:4,  as:3},
- {h:'Red Sox',  a:'Brewers',   hs:5,  as:10},
- {h:'Reds',     a:'Giants',    hs:11, as:11},
- {h:'Red Sox',  a:'Reds',      hs:7,  as:8},
- {h:'Giants',   a:'Pirates',   hs:23, as:5},
- {h:'Reds',     a:'Phillies',  hs:8,  as:7},
- {h:'Pirates',  a:'Mets',      hs:6,  as:5},
- {h:'Giants',   a:'Brewers',   hs:4,  as:10},
- {h:'Blue Jays',a:'Red Sox',   hs:1,  as:18},
- {h:'Pirates',  a:'Red Sox',   hs:11, as:13},
-];
 
 function buildStandings(){
   const s={};
-  const teams=['Mets','Blue Jays','Phillies','Pirates','Red Sox','Brewers','Reds','Giants'];
-  teams.forEach(t=>s[t]={w:0,l:0,t:0,rs:0,ra:0});
-  for(const r of RESULTS){
-    s[r.h].rs+=r.hs; s[r.h].ra+=r.as;
-    s[r.a].rs+=r.as; s[r.a].ra+=r.hs;
-    if(r.hs>r.as){s[r.h].w++;s[r.a].l++;}
-    else if(r.as>r.hs){s[r.a].w++;s[r.h].l++;}
-    else{s[r.h].t++;s[r.a].t++;}
+  ['Mets','Blue Jays','Phillies','Pirates','Red Sox','Brewers','Reds','Giants'].forEach(t=>s[t]={w:0,l:0,t:0,rs:0,ra:0});
+  for(const [gid,a] of Object.entries(AFF)){
+    if(a.hs==null||a.as==null) continue;
+    const g=SCHED.find(x=>x.id==gid); if(!g) continue;
+    s[g.home].rs+=a.hs; s[g.home].ra+=a.as;
+    s[g.away].rs+=a.as; s[g.away].ra+=a.hs;
+    if(a.hs>a.as){s[g.home].w++;s[g.away].l++;}
+    else if(a.as>a.hs){s[g.away].w++;s[g.home].l++;}
+    else{s[g.home].t++;s[g.away].t++;}
   }
   return Object.entries(s).map(([team,st])=>{
     const gp=st.w+st.l+st.t;
-    const pct=gp?st.w/gp:0;
-    return {team,...st,gp,pct};
+    return{team,...st,gp,pct:gp?st.w/gp:0};
   }).sort((a,b)=>b.pct-a.pct||b.w-a.w||a.l-b.l);
 }
-
 function renderStandings(){
   const rows=buildStandings();
-  const leader=rows[0]?.w||0;
-  const tbl=document.getElementById('standingsTable');
-  tbl.innerHTML=`<thead><tr>
-    <th style="text-align:left">Team</th>
-    <th>W</th><th>L</th><th>T</th><th>GP</th>
-    <th>RS</th><th>RA</th><th>PCT</th><th>GB</th>
-  </tr></thead><tbody>`+rows.map((r,i)=>{
-    const gb=i===0?'—':((leader-r.w+(rows[0].l-r.l))/2).toFixed(1);
-    const pct=r.gp?r.pct.toFixed(3):'—';
-    return `<tr>
-      <td><span class="rank">${i+1}</span>${r.team}</td>
-      <td class="rec">${r.w}</td>
-      <td class="rec">${r.l}</td>
-      <td class="rec">${r.t}</td>
-      <td class="rs-ra">${r.gp}</td>
-      <td class="rs-ra">${r.rs}</td>
-      <td class="rs-ra">${r.ra}</td>
-      <td class="pct">${pct}</td>
-      <td class="gb">${gb}</td>
-    </tr>`;
-  }).join('')+'</tbody>';
+  const lw=rows[0]?.w||0,ll=rows[0]?.l||0;
+  document.getElementById('standingsTbl').innerHTML=
+    `<thead><tr><th style="text-align:left">Team</th><th>W</th><th>L</th><th>T</th><th>GP</th><th>RS</th><th>RA</th><th>PCT</th><th>GB</th></tr></thead><tbody>`+
+    rows.map((r,i)=>{
+      const gb=i===0?'—':((lw-r.w+(ll-r.l))/2).toFixed(1);
+      return `<tr><td><span class="rank">${i+1}</span>${r.team}</td><td class="rec">${r.w}</td><td class="rec">${r.l}</td><td class="rec">${r.t}</td><td class="rs-ra">${r.gp}</td><td class="rs-ra">${r.rs}</td><td class="rs-ra">${r.ra}</td><td class="pct-col">${r.gp?r.pct.toFixed(3):'—'}</td><td class="gb-col">${gb}</td></tr>`;
+    }).join('')+'</tbody>';
 }
-
 let standingsOpen=true;
 function toggleStandings(){
   standingsOpen=!standingsOpen;
   document.getElementById('standingsBody').style.display=standingsOpen?'':'none';
-  document.getElementById('stoggle').textContent=standingsOpen?'hide ▲':'show ▼';
+  document.getElementById('stog').textContent=standingsOpen?'hide ▲':'show ▼';
 }
 
-// ── Game log state ───────────────────────────────────────────────────────
 let tab='all', expanded=new Set();
 function setTab(t,el){tab=t;document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));el.classList.add('on');render();}
 function toggle(id){expanded.has(id)?expanded.delete(id):expanded.add(id);render();}
 
-function past(dt){return dt<TODAY;}
-
 function gameStatus(g){
   const a=AFF[g.id];
-  if(!past(g.dt)) return 'upcoming';
+  if(!isPast(g.dt)) return 'upcoming';
   if(!a) return 'missing';
   if([g.home,g.away].every(t=>Object.keys(a.teams).includes(t))) return 'both';
   return 'one';
 }
 
-function fmtD(dt){
-  const mn=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  const dn=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-  return `${dn[dt.getDay()]}, ${mn[dt.getMonth()]} ${dt.getDate()}`;
-}
-
 function render(){
   const tf=document.getElementById('teamSel').value;
-  const sf=document.getElementById('srch').value.toLowerCase();
-  function mf(g){
-    if(tf&&g.home!==tf&&g.away!==tf) return false;
-    if(sf){
-      const a=AFF[g.id];
-      const pn=a?Object.values(a.teams).flatMap(t=>t.pitchers.map(p=>p.name.toLowerCase())):[];
-      if(![g.home,g.away,g.field,String(g.id),...pn].join(' ').toLowerCase().includes(sf)) return false;
-    }
-    return true;
-  }
+  function mf(g){return !tf||(g.home===tf||g.away===tf);}
   function mt(g){
     const s=gameStatus(g);
     if(tab==='all') return true;
-    if(tab==='filed') return s==='both';
-    if(tab==='partial') return s==='one';
-    if(tab==='missing') return s==='missing';
+    if(tab==='missing') return s==='missing'||s==='one';
     if(tab==='upcoming') return s==='upcoming';
     return true;
   }
   const vis=SCHED.filter(g=>mf(g)&&mt(g));
   const all=SCHED.filter(mf);
-  const p=all.filter(g=>past(g.dt));
-  const both=p.filter(g=>gameStatus(g)==='both').length;
-  const part=p.filter(g=>gameStatus(g)==='one').length;
-  const up=all.filter(g=>gameStatus(g)==='upcoming').length;
+  const past=all.filter(g=>isPast(g.dt));
+  const both=past.filter(g=>gameStatus(g)==='both').length;
+  const missing=past.filter(g=>gameStatus(g)==='missing'||gameStatus(g)==='one').length;
+  const upcoming=all.filter(g=>gameStatus(g)==='upcoming').length;
   document.getElementById('statsRow').innerHTML=`
     <div class="stat"><div class="stat-lbl">Total</div><div class="stat-val">${all.length}</div></div>
     <div class="stat"><div class="stat-lbl">Both filed</div><div class="stat-val">${both}</div></div>
-    <div class="stat"><div class="stat-lbl">Partial</div><div class="stat-val">${part}</div></div>
-    <div class="stat"><div class="stat-lbl">Upcoming</div><div class="stat-val">${up}</div></div>
+    <div class="stat"><div class="stat-lbl">Missing</div><div class="stat-val">${missing}</div></div>
+    <div class="stat"><div class="stat-lbl">Upcoming</div><div class="stat-val">${upcoming}</div></div>
   `;
   if(!vis.length){document.getElementById('gameList').innerHTML='<div class="empty">No games match this filter.</div>';return;}
   const groups=[];let ld=null;
@@ -495,108 +330,45 @@ function render(){
 }
 
 function renderCard(g){
-  const a=AFF[g.id];
-  const s=gameStatus(g);
-  const open=expanded.has(g.id);
-  const isPastGame=past(g.dt);
+  const a=AFF[g.id];const s=gameStatus(g);const open=expanded.has(g.id);const ip=isPast(g.dt);
   const pill=s==='both'?'<span class="sp sb">Both filed</span>':s==='one'?'<span class="sp so">Partial</span>':s==='missing'?'<span class="sp sn">Missing</span>':'<span class="sp su">Upcoming</span>';
-  const hf=a&&a.teams[g.home], af=a&&a.teams[g.away];
-  const dh=isPastGame?(hf?'df':'dp'):'du', da=isPastGame?(af?'df':'dp'):'du';
-
+  const hf=a&&a.teams[g.home],af=a&&a.teams[g.away];
+  const dh=ip?(hf?'df':'dp'):'du',da=ip?(af?'df':'dp'):'du';
   let body='';
   if(open){
-    // Score
     let score='';
-    if(a&&a.hs!==undefined){
-      const hw=a.hs>a.as, aw=a.as>a.hs;
-      score=`<div class="sr">
-        <div class="sc ${aw?'win':''}"><span class="scn">${g.away}</span><span class="scv">${a.as}</span></div>
-        <span class="sat">@</span>
-        <div class="sc ${hw?'win':''}"><span class="scn">${g.home}</span><span class="scv">${a.hs}</span></div>
-      </div>`;
+    if(a&&a.hs!=null&&a.as!=null){
+      const hw=a.hs>a.as,aw=a.as>a.hs;
+      score=`<div class="sr"><div class="sc ${aw?'win':''}"><span class="scn">${g.away}</span><span class="scv">${a.as}</span></div><span class="sat">@</span><div class="sc ${hw?'win':''}"><span class="scn">${g.home}</span><span class="scv">${a.hs}</span></div></div>`;
     } else {
-      score=`<div class="ns">${isPastGame?'Score not recorded':'Game not yet played'}</div>`;
+      score=`<div class="ns">${ip?'Score not fully recorded':'Game not yet played'}</div>`;
     }
-
     const note=a&&a.note?`<div class="nt">&#9888; ${a.note}</div>`:'';
-
-    // Pitchers — gather all, determine rest eligibility vs team's next game
-    const allP=a?Object.entries(a.teams).flatMap(([team,td])=>td.pitchers.map(p=>({...p,team}))):[];
-
+    const allP=a?Object.entries(a.teams).flatMap(([team,td])=>td.pitchers.map(p=>({...p,team}))).filter(p=>p.p!=null):[];
     let ptrs='';
     if(allP.length){
       const rows=allP.map(p=>{
-        const clr=pitchColor(p.p);
-        const pct=Math.min(100,Math.round(p.p/75*100));
-        const rd=restDays(p.p);
-        const nextGame=nextGameDate(p.team);
-        const elig=isEligible(p.gd, p.p, nextGame);
-
-        // Rest pill: green = available for next game, red = not available
-        let restLabel='';
-        if(!nextGame){
-          restLabel=`<span class="rest-pill rest-ok">available</span>`;
-        } else if(elig){
-          restLabel=`<span class="rest-pill rest-ok">available</span>`;
-        } else {
-          const eligDate=new Date(p.gd); eligDate.setDate(eligDate.getDate()+rd+1);
-          const mn=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-          restLabel=`<span class="rest-pill rest-no">out until ${mn[eligDate.getMonth()]} ${eligDate.getDate()}</span>`;
-        }
-
-        return `<tr>
-          <td><span class="tb ${p.side==='away'?'ta':'th2'}">${p.team}</span>${p.name}</td>
-          <td><div class="pb"><span class="pw" style="color:${clr}">${p.p}</span><div class="pbb"><div class="pbf" style="width:${pct}%;background:${clr}"></div></div></div></td>
-          <td>${restLabel}</td>
-        </tr>`;
+        const clr=pitchColor(p.p),pct=Math.min(100,Math.round(p.p/75*100));
+        const ng=nextGameDate(p.team),elig=isEligible(p.gd,p.p,ng);
+        let rp='';
+        if(!ng){rp=`<span class="rp rok">available</span>`;}
+        else if(elig){rp=`<span class="rp rok">available</span>`;}
+        else{const el=new Date(p.gd);el.setDate(el.getDate()+restDays(p.p)+1);rp=`<span class="rp rno">out until ${MN[el.getMonth()]} ${el.getDate()}</span>`;}
+        return `<tr><td><span class="tb ${p.side==='away'?'ta':'th2'}">${p.team}</span>${p.name}</td><td><div class="pb"><span class="pw" style="color:${clr}">${p.p}</span><div class="pbb"><div class="pbf" style="width:${pct}%;background:${clr}"></div></div></div></td><td>${rp}</td></tr>`;
       }).join('');
-      ptrs=`<div class="sl">Pitchers</div><table class="pt">
-        <thead><tr><th>Player</th><th>Pitches</th><th>Next game eligibility</th></tr></thead>
-        <tbody>${rows}</tbody>
-      </table>`;
-    } else if(isPastGame){
-      ptrs='<div class="ns" style="margin-bottom:14px">No pitcher data recorded</div>';
-    }
-
-    // Affidavit boxes
+      ptrs=`<div class="sl">Pitchers</div><table class="pt"><thead><tr><th>Player</th><th>Pitches</th><th>Next game eligibility</th></tr></thead><tbody>${rows}</tbody></table>`;
+    } else if(ip){ptrs='<div class="ns" style="margin-bottom:14px">No pitcher data recorded</div>';}
     function abox(team,lbl){
       const td=a&&a.teams[team];
-      if(!isPastGame) return `<div class="ab au2"><div class="at2">${team} (${lbl})</div><div class="aff">not yet played</div></div>`;
+      if(!ip) return `<div class="ab au2"><div class="at2">${team} (${lbl})</div><div class="aff">not yet played</div></div>`;
       if(td) return `<div class="ab af2"><div class="at2">${team} (${lbl})</div><div class="aff">${td.file}</div></div>`;
       return `<div class="ab am"><div class="at2">${team} (${lbl})</div><div class="aff">not filed</div></div>`;
     }
-    const bye=g.bye?`<div style="font-size:11px;color:var(--text3);font-family:var(--mono);margin-top:8px">Bye this game: ${g.bye}</div>`:'';
-
-    body=`<div class="cb">
-      <div style="margin-bottom:12px"><div class="sl">Final score</div>${score}</div>
-      ${note}
-      ${ptrs?`<div style="margin-bottom:14px">${ptrs}</div>`:''}
-      <div><div class="sl">Affidavit status</div><div class="ar">${abox(g.away,'away')}${abox(g.home,'home')}</div></div>
-      ${bye}
-    </div>`;
+    body=`<div class="cb"><div style="margin-bottom:12px"><div class="sl">Final score</div>${score}</div>${note}${ptrs?`<div style="margin-bottom:14px">${ptrs}</div>`:''}<div><div class="sl">Affidavit status</div><div class="ar">${abox(g.away,'away')}${abox(g.home,'home')}</div></div></div>`;
   }
-
-  return `<div class="card">
-    <div class="ch" onclick="toggle(${g.id})">
-      <div class="gn">${g.id}</div>
-      <div class="gi">
-        <div class="gm">${g.away} @ ${g.home}</div>
-        <div class="gw">${g.time} · ${g.field}${g.bye?' · bye: '+g.bye:''}</div>
-      </div>
-      <div class="gme">
-        <div class="dots">
-          <div class="dot ${da}" title="${g.away} affidavit"></div>
-          <div class="dot ${dh}" title="${g.home} affidavit"></div>
-        </div>
-        ${pill}
-        <span class="cv ${open?'open':''}">&#9660;</span>
-      </div>
-    </div>
-    ${body}
-  </div>`;
+  return `<div class="card"><div class="ch" onclick="toggle(${g.id})"><div class="gn">${g.id}</div><div class="gi"><div class="gm">${g.away} @ ${g.home}</div><div class="gw">${g.time} · ${g.field}</div></div><div class="gme"><div class="dots"><div class="dot ${da}" title="${g.away}"></div><div class="dot ${dh}" title="${g.home}"></div></div>${pill}<span class="cv ${open?'open':''}">&#9660;</span></div></div>${body}</div>`;
 }
 
-// Init
 renderStandings();
 render();
 </script>
