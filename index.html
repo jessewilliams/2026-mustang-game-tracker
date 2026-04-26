@@ -132,7 +132,7 @@ select{font-family:var(--sans);font-size:13px;padding:6px 10px;border-radius:7px
 </div>
 
 <script>
-const TODAY = new Date(2026, 3, 26); // Apr 26 2026
+const TODAY = new Date(2026, 3, 26);
 function d(m, day) { return new Date(2026, m-1, day); }
 const MN = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 const DN = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
@@ -141,9 +141,18 @@ function isPast(dt) { return dt < TODAY; }
 function restDays(p) { return p<=20?0:p<=35?1:p<=50?2:p<=65?3:4; }
 function pitchColor(p) { return p<=35?'#2d8a3e':p<=50?'#b07800':p<=65?'#c05000':'#8b1a1a'; }
 
-function nextGameDate(team) {
-  const up = SCHED.filter(g => (g.home===team||g.away===team) && g.dt > TODAY);
+function nextGameDate(team, afterDate) {
+  const ref = afterDate || TODAY;
+  const up = SCHED.filter(g => (g.home===team||g.away===team) && g.dt > ref);
   return up.length ? up[0].dt : null;
+}
+
+function isEligible(pitchDate, pitches, targetDate) {
+  if (!targetDate) return true;
+  const rd = restDays(pitches);
+  const el = new Date(pitchDate);
+  el.setDate(el.getDate() + rd + 1);
+  return el <= targetDate;
 }
 
 const SCHED = [
@@ -222,7 +231,7 @@ const AFF = {
   14: {hs:5,  as:8,  teams:{'Phillies':{file:'game14phillies.xlsx',  pitchers:[{side:'home',name:'Andrew',p:34,gd:d(3,18)},{side:'home',name:'Lucas V.',p:49,gd:d(3,18)},{side:'home',name:'Lino',p:36,gd:d(3,18)}]}, 'Mets':{file:'game14mets.pdf',pitchers:[{side:'away',name:'R. Kanney',p:46,gd:d(3,18)},{side:'away',name:'A. Luna',p:15,gd:d(3,18)},{side:'away',name:'K. Pacheco',p:16,gd:d(3,18)},{side:'away',name:'J. Rodriguez',p:45,gd:d(3,18)}]}}},
   15: {hs:9,  as:18, teams:{'Blue Jays':{file:'game15bluejays.xlsx', pitchers:[{side:'away',name:'Bryson Barlics',p:8,gd:d(3,19)},{side:'away',name:'Joe Burks',p:34,gd:d(3,19)},{side:'away',name:'Joey Fabbri',p:28,gd:d(3,19)},{side:'away',name:'Ryan Ferguson',p:45,gd:d(3,19)}]}, 'Reds':{file:'game15reds.xlsx',pitchers:[{side:'home',name:'Jake',p:11,gd:d(3,19)},{side:'home',name:'JC',p:33,gd:d(3,19)},{side:'home',name:'Cruz',p:37,gd:d(3,19)},{side:'home',name:'AJ',p:31,gd:d(3,19)}]}}},
   16: {hs:9,  as:9,  teams:{'Blue Jays':{file:'game16bluejays.xlsx', pitchers:[{side:'home',name:'Gavin Williams',p:35,gd:d(3,21)},{side:'home',name:'Bryson Barlics',p:64,gd:d(3,21)},{side:'home',name:'Joey Fabbri',p:28,gd:d(3,21)}]}, 'Pirates':{file:'game16pirates.xlsx',pitchers:[{side:'away',name:'Caden',p:45,gd:d(3,21)},{side:'away',name:'Chase',p:47,gd:d(3,21)},{side:'away',name:'Jaxon',p:22,gd:d(3,21)},{side:'away',name:'Powell',p:45,gd:d(3,21)}]}}},
-  17: {hs:3,  as:5,  teams:{'Reds':{file:'game17reds.xlsx',          pitchers:[{side:'away',name:'Joey',p:65,gd:d(3,21)},{side:'away',name:'Cameron',p:23,gd:d(3,21)},{side:'away',name:'Jake',p:42,gd:d(3,21)}]}}},
+  17: {hs:3,  as:5,  teams:{'Brewers':{file:'game17brewers.xlsx',    pitchers:[{side:'home',name:'Casey',p:33,gd:d(3,21)},{side:'home',name:'Weston',p:22,gd:d(3,21)},{side:'home',name:'Logan',p:46,gd:d(3,21)},{side:'home',name:'Jackson',p:23,gd:d(3,21)}]}, 'Reds':{file:'game17reds.xlsx',pitchers:[{side:'away',name:'Racobs',p:68,gd:d(3,21)},{side:'away',name:'Olsen',p:24,gd:d(3,21)},{side:'away',name:'Jake',p:43,gd:d(3,21)}]}}},
   18: {hs:11, as:13, teams:{'Phillies':{file:'game18phillies.xlsx',  pitchers:[{side:'away',name:'Lucas C.',p:62,gd:d(3,21)},{side:'away',name:'Lucas V.',p:6,gd:d(3,21)},{side:'away',name:'Jovan',p:50,gd:d(3,21)}]}, 'Giants':{file:'game18giants.jpeg',pitchers:[{side:'home',name:'Lorenzo',p:20,gd:d(3,21)},{side:'home',name:'Angelo',p:42,gd:d(3,21)},{side:'home',name:'Harrison',p:6,gd:d(3,21)},{side:'home',name:'Oliver',p:21,gd:d(3,21)},{side:'home',name:'Aiden',p:21,gd:d(3,21)}]}}},
   19: {hs:9,  as:1,  teams:{'Red Sox':{file:'game19redsox.xlsx',     pitchers:[{side:'home',name:'Kaleb',p:38,gd:d(3,21)},{side:'home',name:'Jon',p:42,gd:d(3,21)},{side:'home',name:'Kayson',p:16,gd:d(3,21)},{side:'home',name:'Nathaniel',p:18,gd:d(3,21)}]}, 'Mets':{file:'game19mets.jpeg',pitchers:[{side:'away',name:'W. Billman',p:19,gd:d(3,21)},{side:'away',name:'K. Pacheco',p:52,gd:d(3,21)},{side:'away',name:'M. McBride',p:19,gd:d(3,21)}]}}},
   20: {hs:2,  as:8,  teams:{'Brewers':{file:'game20brewers.xlsx',    pitchers:[{side:'away',name:'Casey',p:61,gd:d(3,23)},{side:'away',name:'Weston',p:44,gd:d(3,23)}]}, 'Mets':{file:'game20mets.jpeg',pitchers:[{side:'home',name:'R. Kanney',p:11,gd:d(3,23)},{side:'home',name:'J. Villarral',p:33,gd:d(3,23)},{side:'home',name:'J. Rodriguez',p:29,gd:d(3,23)}]}}},
@@ -244,7 +253,7 @@ const AFF = {
   36: {hs:14, as:8,  teams:{'Brewers':{file:'game36brewers.xlsx',    pitchers:[{side:'home',name:'Casey',p:49,gd:d(4,14)},{side:'home',name:'Logan',p:44,gd:d(4,14)},{side:'home',name:'Jackson',p:19,gd:d(4,14)}]}, 'Phillies':{file:'game36phillies.xlsx',pitchers:[{side:'away',name:'Andrew',p:53,gd:d(4,14)},{side:'away',name:'Lucas C.',p:4,gd:d(4,14)},{side:'away',name:'Lucas V.',p:54,gd:d(4,14)}]}}},
   37: {hs:9,  as:5,  teams:{'Mets':{file:'game37mets.pdf',           pitchers:[{side:'home',name:'J. Rodriguez',p:51,gd:d(4,15)},{side:'home',name:'K. Pacheco',p:41,gd:d(4,15)},{side:'home',name:'R. Kanney',p:26,gd:d(4,15)}]}}},
   38: {hs:6,  as:13, teams:{'Giants':{file:'game38bluejays.xlsx',    pitchers:[]}, 'Blue Jays':{file:'game38bluejays.xlsx',pitchers:[{side:'home',name:'Joey Fabbri',p:27,gd:d(4,16)},{side:'home',name:'Joe Burks',p:24,gd:d(4,16)},{side:'home',name:'Bryson Barlics',p:29,gd:d(4,16)},{side:'home',name:'Gavin Williams',p:30,gd:d(4,16)}]}}},
-  39: {hs:10, as:13, teams:{'Pirates':{file:'game39pirates.xlsx',    pitchers:[{side:'home',name:'Caden',p:26,gd:d(4,18)},{side:'home',name:'Chase',p:21,gd:d(4,18)},{side:'home',name:'Jaxon',p:34,gd:d(4,18)},{side:'home',name:'Marco',p:18,gd:d(4,18)},{side:'home',name:'Xander',p:25,gd:d(4,18)}]}}},
+  39: {hs:16, as:13, teams:{'Giants':{file:'game39giants.jpeg',      pitchers:[{side:'away',name:'Angelo',p:49,gd:d(4,18)},{side:'away',name:'Owen',p:19,gd:d(4,18)},{side:'away',name:'Chase',p:17,gd:d(4,18)}]}, 'Pirates':{file:'game39pirates.xlsx',pitchers:[{side:'home',name:'Caden',p:26,gd:d(4,18)},{side:'home',name:'Chase',p:21,gd:d(4,18)},{side:'home',name:'Jaxon',p:34,gd:d(4,18)},{side:'home',name:'Marco',p:18,gd:d(4,18)},{side:'home',name:'Xander',p:25,gd:d(4,18)}]}}},
   40: {hs:6,  as:8,  teams:{'Brewers':{file:'game40brewers.xlsx',    pitchers:[{side:'home',name:'Casey',p:56,gd:d(4,18)},{side:'home',name:'Weston',p:51,gd:d(4,18)},{side:'home',name:'Logan',p:29,gd:d(4,18)},{side:'home',name:'Jamison',p:23,gd:d(4,18)}]}, 'Mets':{file:'game40mets.pdf',pitchers:[{side:'away',name:'J. Rodriguez',p:55,gd:d(4,18)},{side:'away',name:'K. Pacheco',p:59,gd:d(4,18)}]}}},
   41: {hs:9,  as:17, teams:{'Phillies':{file:'game41phillies.xlsx',  pitchers:[{side:'home',name:'Lucas C.',p:56,gd:d(4,18)},{side:'home',name:'Archer',p:22,gd:d(4,18)},{side:'home',name:'Lino',p:19,gd:d(4,18)},{side:'home',name:'Jovan',p:33,gd:d(4,18)},{side:'home',name:'Benjamin',p:30,gd:d(4,18)}]}}},
   42: {hs:8,  as:7,  teams:{'Red Sox':{file:'game42bluejays.xlsx',   pitchers:[]}, 'Blue Jays':{file:'game42bluejays.xlsx',pitchers:[{side:'away',name:'Joey Fabbri',p:31,gd:d(4,18)},{side:'away',name:'Bruno Silva',p:29,gd:d(4,18)},{side:'away',name:'Joe Burks',p:10,gd:d(4,18)},{side:'away',name:'Bryson Barlics',p:35,gd:d(4,18)}]}}},
@@ -253,24 +262,7 @@ const AFF = {
   45: {hs:9,  as:4,  teams:{'Reds':{file:'game45mets.pdf',           pitchers:[]}, 'Mets':{file:'game45mets.pdf',pitchers:[{side:'away',name:'J. Rodriguez',p:73,gd:d(4,23)},{side:'away',name:'K. Pacheco',p:34,gd:d(4,23)},{side:'away',name:'J. Villarral',p:12,gd:d(4,23)}]}}},
 };
 
-// ── Helpers ────────────────────────────────────────────────────────────────
-
-function buildLatestOutings() {
-  const latest = {};
-  for (const [gid, a] of Object.entries(AFF)) {
-    for (const [team, td] of Object.entries(a.teams)) {
-      for (const p of td.pitchers) {
-        if (p.p == null) continue;
-        const key = `${p.name}||${team}`;
-        if (!latest[key] || p.gd > latest[key].gd) {
-          latest[key] = {gd: p.gd, p: p.p};
-        }
-      }
-    }
-  }
-  return latest;
-}
-
+// ── Standings ─────────────────────────────────────────────────────────────
 function buildStandings() {
   const s = {};
   ['Mets','Blue Jays','Phillies','Pirates','Red Sox','Brewers','Reds','Giants'].forEach(t => s[t] = {w:0,l:0,t:0,rs:0,ra:0});
@@ -306,7 +298,6 @@ function toggleStandings() {
 }
 
 // ── Game log ───────────────────────────────────────────────────────────────
-
 let tab = 'all', expanded = new Set();
 function setTab(t, el) { tab = t; document.querySelectorAll('.tab').forEach(x => x.classList.remove('on')); el.classList.add('on'); render(); }
 function toggle(id) { expanded.has(id) ? expanded.delete(id) : expanded.add(id); render(); }
@@ -333,7 +324,7 @@ function render() {
   const all = SCHED.filter(mf);
   const past = all.filter(g => isPast(g.dt));
   const both = past.filter(g => gameStatus(g) === 'both').length;
-  const missing = past.filter(g => gameStatus(g) === 'missing' || gameStatus(g) === 'one').length;
+  const missing = past.filter(g => ['missing','one'].includes(gameStatus(g))).length;
   const upcoming = all.filter(g => gameStatus(g) === 'upcoming').length;
 
   document.getElementById('statsRow').innerHTML = `
@@ -361,17 +352,16 @@ function renderCard(g) {
   const s = gameStatus(g);
   const open = expanded.has(g.id);
   const ip = isPast(g.dt);
-  const pill = s==='both' ? '<span class="sp sb">Both filed</span>'
-             : s==='one'  ? '<span class="sp so">Partial</span>'
+  const pill = s==='both'    ? '<span class="sp sb">Both filed</span>'
+             : s==='one'     ? '<span class="sp so">Partial</span>'
              : s==='missing' ? '<span class="sp sn">Missing</span>'
-             : '<span class="sp su">Upcoming</span>';
+             :                 '<span class="sp su">Upcoming</span>';
   const hf = a && a.teams[g.home], af = a && a.teams[g.away];
   const dh = ip ? (hf ? 'df' : 'dp') : 'du';
   const da = ip ? (af ? 'df' : 'dp') : 'du';
 
   let body = '';
   if (open) {
-    // Score
     let score = '';
     if (a && a.hs != null && a.as != null) {
       const hw = a.hs > a.as, aw = a.as > a.hs;
@@ -386,22 +376,19 @@ function renderCard(g) {
 
     const note = a && a.note ? `<div class="nt">&#9888; ${a.note}</div>` : '';
 
-    // Pitchers — use global latest outing for eligibility
-    const allP = a ? Object.entries(a.teams).flatMap(([team, td]) =>
-      td.pitchers.map(p => ({...p, team}))
-    ).filter(p => p.p != null) : [];
+    const allP = a ? Object.entries(a.teams)
+      .flatMap(([team, td]) => td.pitchers.map(p => ({...p, team})))
+      .filter(p => p.p != null) : [];
 
     let ptrs = '';
     if (allP.length) {
       const rows = allP.map(p => {
         const clr = pitchColor(p.p);
         const pct = Math.min(100, Math.round(p.p / 75 * 100));
-        const key = `${p.name}||${p.team}`;
-        const latest = LATEST_OUTINGS[key] || {gd: p.gd, p: p.p};
-        const ng = nextGameDate(p.team);
-        const rd = restDays(latest.p);
-        const el = new Date(latest.gd); el.setDate(el.getDate() + rd + 1);
-        const elig = !ng || el <= ng;
+        const ng = nextGameDate(p.team, p.gd);
+        const elig = isEligible(p.gd, p.p, ng);
+        const rd = restDays(p.p);
+        const el = new Date(p.gd); el.setDate(el.getDate() + rd + 1);
         const rp = elig
           ? `<span class="rp rok">available</span>`
           : `<span class="rp rno">out until ${MN[el.getMonth()]} ${el.getDate()}</span>`;
@@ -453,8 +440,6 @@ function renderCard(g) {
   </div>`;
 }
 
-// ── Init ───────────────────────────────────────────────────────────────────
-const LATEST_OUTINGS = buildLatestOutings();
 renderStandings();
 render();
 </script>
