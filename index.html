@@ -106,7 +106,7 @@ select{font-family:var(--sans);font-size:13px;padding:6px 10px;border-radius:7px
 <div class="shell">
 <div class="top">
   <h1>Mustang Game Tracker</h1>
-  <span class="ts">2026 season · updated Apr 26</span>
+  <span class="ts">2026 season · updated Apr 29</span>
 </div>
 <div class="sw">
   <div class="sh" onclick="toggleStandings()">
@@ -132,7 +132,7 @@ select{font-family:var(--sans);font-size:13px;padding:6px 10px;border-radius:7px
 </div>
 
 <script>
-const TODAY = new Date(2026, 3, 26);
+const TODAY = new Date(2026, 3, 29);
 function d(m, day) { return new Date(2026, m-1, day); }
 const MN = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 const DN = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
@@ -247,7 +247,7 @@ const AFF = {
   30: {hs:9,  as:10, teams:{'Brewers':{file:'game30brewers.xlsx',    pitchers:[{side:'home',name:'Casey',p:33,gd:d(4,9)},{side:'home',name:'Weston',p:14,gd:d(4,9)},{side:'home',name:'Logan',p:65,gd:d(4,9)},{side:'home',name:'Jesse',p:23,gd:d(4,9)}]}, 'Pirates':{file:'game30pirates.xlsx',pitchers:[{side:'away',name:'Caden',p:24,gd:d(4,9)},{side:'away',name:'Chase',p:15,gd:d(4,9)},{side:'away',name:'Jaxon',p:12,gd:d(4,9)},{side:'away',name:'Trey',p:15,gd:d(4,9)},{side:'away',name:'Xander',p:16,gd:d(4,9)},{side:'away',name:'Powell',p:34,gd:d(4,9)}]}}},
   31: {hs:2,  as:15, teams:{'Reds':{file:'game31brewers.xlsx',       pitchers:[{side:'home',name:'Joey',p:60,gd:d(4,11)},{side:'home',name:'Cameron',p:16,gd:d(4,11)},{side:'home',name:'JC',p:10,gd:d(4,11)},{side:'home',name:'AJ',p:20,gd:d(4,11)},{side:'home',name:'James',p:68,gd:d(4,11)}]}, 'Brewers':{file:'game31brewers.xlsx',pitchers:[{side:'away',name:'Casey',p:39,gd:d(4,11)},{side:'away',name:'Weston',p:54,gd:d(4,11)},{side:'away',name:'Jackson',p:11,gd:d(4,11)}]}}},
   32: {hs:12, as:4,  teams:{'Blue Jays':{file:'game32bluejays.xlsx', pitchers:[{side:'home',name:'Joe Burks',p:31,gd:d(4,11)},{side:'home',name:'Bryson Barlics',p:56,gd:d(4,11)}]}, 'Phillies':{file:'game32phillies.xlsx',pitchers:[{side:'away',name:'Lucas V.',p:42,gd:d(4,11)},{side:'away',name:'Mason',p:31,gd:d(4,11)},{side:'away',name:'Lino',p:48,gd:d(4,11)},{side:'away',name:'Benjamin',p:32,gd:d(4,11)}]}}},
-  33: {hs:12, as:6,  teams:{'Giants':{file:'game33giants.jpeg',      pitchers:[{side:'home',name:'Angelo',p:30,gd:d(4,11)},{side:'home',name:'Lorenzo',p:47,gd:d(4,11)},{side:'home',name:'Owen',p:23,gd:d(4,11)},{side:'home',name:'Chase',p:27,gd:d(4,11)},{side:'home',name:'Oliver',p:22,gd:d(4,11)}]}}},
+  33: {hs:12, as:6,  teams:{'Giants':{file:'game33giants.jpeg',      pitchers:[{side:'home',name:'Angelo',p:30,gd:d(4,11)},{side:'home',name:'Lorenzo',p:47,gd:d(4,11)},{side:'home',name:'Owen',p:23,gd:d(4,11)},{side:'home',name:'Chase',p:27,gd:d(4,11)},{side:'home',name:'Oliver',p:22,gd:d(4,11)}]}, 'Mets':{file:'game33mets.pdf',pitchers:[{side:'away',name:'M. McBride',p:39,gd:d(4,11)},{side:'away',name:'D. Hodge',p:59,gd:d(4,11)}]}}},
   34: {hs:6,  as:10, teams:{'Red Sox':{file:'game34redsox.pdf',      pitchers:[]}, 'Pirates':{file:'game34pirates.xlsx',pitchers:[{side:'away',name:'Caden',p:21,gd:d(4,11)},{side:'away',name:'Jaxon',p:23,gd:d(4,11)},{side:'away',name:'Powell',p:25,gd:d(4,11)},{side:'away',name:'Trey',p:35,gd:d(4,11)},{side:'away',name:'Xander',p:31,gd:d(4,11)}]}}},
   35: {hs:6,  as:13, teams:{'Pirates':{file:'game35pirates.xlsx',    pitchers:[{side:'home',name:'Caden',p:32,gd:d(4,13)},{side:'home',name:'Chase',p:24,gd:d(4,13)},{side:'home',name:'Jaxon',p:42,gd:d(4,13)},{side:'home',name:'Powell',p:37,gd:d(4,13)},{side:'home',name:'Xander',p:23,gd:d(4,13)}]}, 'Reds':{file:'game35reds.xlsx',pitchers:[{side:'away',name:'Jake',p:76,gd:d(4,13)},{side:'away',name:'AJ',p:48,gd:d(4,13)},{side:'away',name:'Cameron',p:17,gd:d(4,13)}]}}},
   36: {hs:14, as:8,  teams:{'Brewers':{file:'game36brewers.xlsx',    pitchers:[{side:'home',name:'Casey',p:49,gd:d(4,14)},{side:'home',name:'Logan',p:44,gd:d(4,14)},{side:'home',name:'Jackson',p:19,gd:d(4,14)}]}, 'Phillies':{file:'game36phillies.xlsx',pitchers:[{side:'away',name:'Andrew',p:53,gd:d(4,14)},{side:'away',name:'Lucas C.',p:4,gd:d(4,14)},{side:'away',name:'Lucas V.',p:54,gd:d(4,14)}]}}},
@@ -264,6 +264,7 @@ const AFF = {
   47: {hs:13, as:5,  teams:{'Phillies':{file:'game47phillies.xlsx',  pitchers:[{side:'home',name:'Andrew',p:31,gd:d(4,25)},{side:'home',name:'Lucas C.',p:56,gd:d(4,25)},{side:'home',name:'Lucas V.',p:19,gd:d(4,25)}]}, 'Red Sox':{file:'game47redsox.pdf',pitchers:[{side:'away',name:'Jon',p:43,gd:d(4,25)},{side:'away',name:'Kayson',p:15,gd:d(4,25)},{side:'away',name:'Kaleb',p:50,gd:d(4,25)}]}}},
   48: {hs:7,  as:16, teams:{'Brewers':{file:'game48brewers.xlsx',    pitchers:[{side:'away',name:'Logan',p:72,gd:d(4,25)},{side:'away',name:'Jesse',p:28,gd:d(4,25)},{side:'away',name:'Jamison',p:54,gd:d(4,25)}]}, 'Pirates':{file:'game48pirates.xlsx',pitchers:[{side:'home',name:'Caden',p:34,gd:d(4,25)},{side:'home',name:'Chase',p:24,gd:d(4,25)},{side:'home',name:'Jaxon',p:46,gd:d(4,25)},{side:'home',name:'Powell',p:46,gd:d(4,25)}]}}},
   49: {hs:13, as:6,  teams:{'Blue Jays':{file:'game49bluejays.xlsx',pitchers:[{side:'away',name:'Ryan Ferguson',p:26,gd:d(4,25)},{side:'away',name:'Joe Burks',p:41,gd:d(4,25)},{side:'away',name:'Bryson Barlics',p:56,gd:d(4,25)}]}}},
+  50: {hs:9,  as:8,  teams:{'Mets':{file:'game50mets.pdf',           pitchers:[{side:'home',name:'K. Pacheco',p:24,gd:d(4,28)},{side:'home',name:'D. Hodge',p:54,gd:d(4,28)},{side:'home',name:'J. Rodriguez',p:34,gd:d(4,28)}]}}},
 };
 
 // ── Standings ─────────────────────────────────────────────────────────────
