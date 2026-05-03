@@ -106,7 +106,7 @@ select{font-family:var(--sans);font-size:13px;padding:6px 10px;border-radius:7px
 <div class="shell">
 <div class="top">
   <h1>Mustang Game Tracker</h1>
-  <span class="ts">2026 season · updated May 1</span>
+  <span class="ts">2026 season · updated May 2</span>
 </div>
 <div class="sw">
   <div class="sh" onclick="toggleStandings()">
@@ -132,7 +132,7 @@ select{font-family:var(--sans);font-size:13px;padding:6px 10px;border-radius:7px
 </div>
 
 <script>
-const TODAY = new Date(2026, 4, 1);
+const TODAY = new Date(2026, 4, 2);
 function d(m, day) { return new Date(2026, m-1, day); }
 const MN = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 const DN = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
@@ -258,7 +258,7 @@ const AFF = {
   41: {hs:9,  as:17, teams:{'Phillies':{file:'game41phillies.xlsx',  pitchers:[{side:'home',name:'Lucas C.',p:56,gd:d(4,18)},{side:'home',name:'Archer',p:22,gd:d(4,18)},{side:'home',name:'Lino',p:19,gd:d(4,18)},{side:'home',name:'Jovan',p:33,gd:d(4,18)},{side:'home',name:'Benjamin',p:30,gd:d(4,18)}]}, 'Reds':{file:'game41reds.xlsx',pitchers:[{side:'away',name:'Jake',p:39,gd:d(4,18)},{side:'away',name:'JC',p:11,gd:d(4,18)},{side:'away',name:'Cruz',p:20,gd:d(4,18)},{side:'away',name:'AJ',p:32,gd:d(4,18)}]}}},
   42: {hs:8,  as:7,  teams:{'Blue Jays':{file:'game42bluejays.xlsx',  pitchers:[{side:'away',name:'Joey Fabbri',p:31,gd:d(4,18)},{side:'away',name:'Bruno Silva',p:29,gd:d(4,18)},{side:'away',name:'Joe Burks',p:10,gd:d(4,18)},{side:'away',name:'Bryson Barlics',p:35,gd:d(4,18)}]}, 'Red Sox':{file:'game42redsox.pdf',pitchers:[{side:'home',name:'Jon',p:12,gd:d(4,18)},{side:'home',name:'Kayson',p:28,gd:d(4,18)},{side:'home',name:'Kaleb',p:44,gd:d(4,18)}]}}},
   43: {hs:8,  as:1,  teams:{'Pirates':{file:'game43pirates.xlsx',    pitchers:[{side:'home',name:'Caden',p:38,gd:d(4,22)},{side:'home',name:'Chase',p:25,gd:d(4,22)},{side:'home',name:'Jaxon',p:50,gd:d(4,22)}]}, 'Blue Jays':{file:'game43bluejays.xlsx',pitchers:[{side:'away',name:'Joey Fabbri',p:55,gd:d(4,22)},{side:'away',name:'Joe Burks',p:51,gd:d(4,22)},{side:'away',name:'Bryson Barlics',p:18,gd:d(4,22)}]}}},
-  44: {hs:7,  as:8,  teams:{'Brewers':{file:'game44brewers.xlsx',    pitchers:[{side:'home',name:'Casey',p:46,gd:d(4,22)},{side:'home',name:'Logan',p:25,gd:d(4,22)},{side:'home',name:'Weston',p:54,gd:d(4,22)},{side:'home',name:'Jamison',p:6,gd:d(4,22)}]}}},
+  44: {hs:7,  as:8,  teams:{'Brewers':{file:'game44brewers.xlsx',    pitchers:[{side:'home',name:'Casey',p:46,gd:d(4,22)},{side:'home',name:'Logan',p:25,gd:d(4,22)},{side:'home',name:'Weston',p:54,gd:d(4,22)},{side:'home',name:'Jamison',p:6,gd:d(4,22)}]}, 'Red Sox':{file:'game44redsox.pdf',pitchers:[{side:'away',name:'Jon',p:21,gd:d(4,22)},{side:'away',name:'Kayson',p:34,gd:d(4,22)},{side:'away',name:'Dylan',p:25,gd:d(4,22)},{side:'away',name:'Kaleb',p:44,gd:d(4,22)}]}}},
   45: {hs:9,  as:4,  teams:{'Reds':{file:'game45reds.xlsx',          pitchers:[{side:'home',name:'Jake',p:71,gd:d(4,23)},{side:'home',name:'Cameron',p:32,gd:d(4,23)}]}, 'Mets':{file:'game45mets.pdf',pitchers:[{side:'away',name:'J. Rodriguez',p:73,gd:d(4,23)},{side:'away',name:'K. Pacheco',p:34,gd:d(4,23)},{side:'away',name:'J. Villarral',p:12,gd:d(4,23)}]}}},
   46: {hs:11, as:10, teams:{'Mets':{file:'game46mets.pdf',           pitchers:[{side:'home',name:'J. Villarral',p:13,gd:d(4,25)},{side:'home',name:'M. McBride',p:49,gd:d(4,25)},{side:'home',name:'W. Billman',p:45,gd:d(4,25)}]}, 'Giants':{file:'game46giants.jpeg',pitchers:[{side:'away',name:'Angelo',p:30,gd:d(4,25)},{side:'away',name:'Carson',p:26,gd:d(4,25)},{side:'away',name:'Oliver',p:19,gd:d(4,25)},{side:'away',name:'Aiden',p:44,gd:d(4,25)}]}}},
   47: {hs:13, as:5,  teams:{'Phillies':{file:'game47phillies.xlsx',  pitchers:[{side:'home',name:'Andrew',p:31,gd:d(4,25)},{side:'home',name:'Lucas C.',p:56,gd:d(4,25)},{side:'home',name:'Lucas V.',p:19,gd:d(4,25)}]}, 'Red Sox':{file:'game47redsox.pdf',pitchers:[{side:'away',name:'Jon',p:43,gd:d(4,25)},{side:'away',name:'Kayson',p:15,gd:d(4,25)},{side:'away',name:'Kaleb',p:50,gd:d(4,25)}]}}},
@@ -266,10 +266,17 @@ const AFF = {
   49: {hs:13, as:6,  teams:{'Blue Jays':{file:'game49bluejays.xlsx',pitchers:[{side:'away',name:'Ryan Ferguson',p:26,gd:d(4,25)},{side:'away',name:'Joe Burks',p:41,gd:d(4,25)},{side:'away',name:'Bryson Barlics',p:56,gd:d(4,25)}]}, 'Reds':{file:'game49reds.xlsx',pitchers:[{side:'home',name:'Joey',p:48,gd:d(4,25)},{side:'home',name:'JC',p:53,gd:d(4,25)},{side:'home',name:'Cameron',p:34,gd:d(4,25)},{side:'home',name:'James',p:25,gd:d(4,25)}]}}},
   50: {hs:9,  as:8,  teams:{'Mets':{file:'game50mets.pdf',           pitchers:[{side:'home',name:'K. Pacheco',p:24,gd:d(4,28)},{side:'home',name:'D. Hodge',p:54,gd:d(4,28)},{side:'home',name:'J. Rodriguez',p:34,gd:d(4,28)}]}, 'Pirates':{file:'game50pirates.xlsx',pitchers:[{side:'away',name:'Caden',p:39,gd:d(4,28)},{side:'away',name:'Chase',p:36,gd:d(4,28)},{side:'away',name:'Jaxon',p:47,gd:d(4,28)},{side:'away',name:'Powell',p:36,gd:d(4,28)}]}}},
   51: {hs:3,  as:15, teams:{'Giants':{file:'game51giants.jpeg',      pitchers:[{side:'home',name:'Angelo',p:24,gd:d(4,29)},{side:'home',name:'Lorenzo',p:26,gd:d(4,29)},{side:'home',name:'Carson',p:26,gd:d(4,29)},{side:'home',name:'Chase',p:14,gd:d(4,29)},{side:'home',name:'Oliver',p:47,gd:d(4,29)}]}, 'Reds':{file:'game51reds.xlsx',pitchers:[{side:'away',name:'Joey',p:40,gd:d(4,29)},{side:'away',name:'AJ',p:48,gd:d(4,29)},{side:'away',name:'James',p:25,gd:d(4,29)}]}}},
-  52: {hs:8,  as:13, teams:{'Blue Jays':{file:'game52bluejays.xlsx', pitchers:[{side:'away',name:'Bryson Barlics',p:30,gd:d(4,30)},{side:'away',name:'Gavin Williams',p:21,gd:d(4,30)},{side:'away',name:'Joe Burks',p:42,gd:d(4,30)},{side:'away',name:'Joey Fabbri',p:13,gd:d(4,30)}]}}},
+  52: {hs:8,  as:13, teams:{'Blue Jays':{file:'game52bluejays.xlsx', pitchers:[{side:'away',name:'Bryson Barlics',p:30,gd:d(4,30)},{side:'away',name:'Gavin Williams',p:21,gd:d(4,30)},{side:'away',name:'Joe Burks',p:42,gd:d(4,30)},{side:'away',name:'Joey Fabbri',p:13,gd:d(4,30)}]}, 'Phillies':{file:'game52phillies.xlsx',pitchers:[{side:'home',name:'Lucas C.',p:35,gd:d(4,30)},{side:'home',name:'Lucas V.',p:69,gd:d(4,30)}]}}},
+  53: {hs:10, as:4,  teams:{'Reds':{file:'game53reds.xlsx',          pitchers:[{side:'home',name:'Jake',p:19,gd:d(5,2)},{side:'home',name:'JC',p:42,gd:d(5,2)},{side:'home',name:'AJ',p:27,gd:d(5,2)},{side:'home',name:'Dom',p:17,gd:d(5,2)},{side:'home',name:'Cruz',p:23,gd:d(5,2)}]}}},
+  54: {hs:5,  as:3,  teams:{'Red Sox':{file:'game54redsox.pdf',      pitchers:[{side:'home',name:'Kayson',p:59,gd:d(5,2)},{side:'home',name:'Kaleb',p:56,gd:d(5,2)},{side:'home',name:'Dylan',p:14,gd:d(5,2)}]}}},
+  55: {hs:10, as:10, teams:{'Mets':{file:'game55mets.pdf',           pitchers:[{side:'home',name:'D. Hodge',p:50,gd:d(5,2)},{side:'home',name:'J. Villarral',p:16,gd:d(5,2)},{side:'home',name:'J. Rodriguez',p:9,gd:d(5,2)},{side:'home',name:'C. Ramsey',p:7,gd:d(5,2)},{side:'home',name:'K. Pacheco',p:26,gd:d(5,2)},{side:'home',name:'W. Billman',p:10,gd:d(5,2)}]}, 'Phillies':{file:'game55phillies.xlsx',pitchers:[{side:'away',name:'Lino',p:7,gd:d(5,2)},{side:'away',name:'Jovan',p:42,gd:d(5,2)},{side:'away',name:'Benjamin',p:30,gd:d(5,2)},{side:'away',name:'Lucas C.',p:43,gd:d(5,2)}]}}},
+  56: {hs:12, as:7,  teams:{'Blue Jays':{file:'game56bluejays.xlsx', pitchers:[{side:'home',name:'Gavin Williams',p:29,gd:d(5,2)},{side:'home',name:'Joey Fabbri',p:38,gd:d(5,2)},{side:'home',name:'Bryson Barlics',p:49,gd:d(5,2)}]}, 'Brewers':{file:'game56brewers.xlsx',pitchers:[{side:'away',name:'Casey',p:24,gd:d(5,2)},{side:'away',name:'Jesse',p:14,gd:d(5,2)},{side:'away',name:'Jamison',p:42,gd:d(5,2)},{side:'away',name:'Jackson',p:21,gd:d(5,2)},{side:'away',name:'Nathan',p:26,gd:d(5,2)}]}}},
 };
 
 // ── Standings ─────────────────────────────────────────────────────────────
+// Manual tiebreaker order for teams with identical PCT (lower index = higher rank)
+const TIEBREAK = ['Brewers','Reds','Red Sox','Giants','Mets','Phillies','Pirates','Blue Jays'];
+
 function buildStandings() {
   const s = {};
   ['Mets','Blue Jays','Phillies','Pirates','Red Sox','Brewers','Reds','Giants'].forEach(t => s[t] = {w:0,l:0,t:0,rs:0,ra:0});
@@ -285,7 +292,10 @@ function buildStandings() {
   return Object.entries(s).map(([team, st]) => {
     const gp = st.w + st.l + st.t;
     return {team, ...st, gp, pct: gp ? (st.w + 0.5 * st.t) / gp : 0};
-  }).sort((a, b) => b.pct - a.pct || b.w - a.w || a.l - b.l);
+  }).sort((a, b) => {
+    if (Math.abs(b.pct - a.pct) > 0.0001) return b.pct - a.pct;
+    return TIEBREAK.indexOf(a.team) - TIEBREAK.indexOf(b.team);
+  });
 }
 
 function renderStandings() {
